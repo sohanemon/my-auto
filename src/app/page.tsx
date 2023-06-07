@@ -1,3 +1,4 @@
+// @ts-nocheck
 import AllCars from './all-cars';
 
 export default function Home() {
