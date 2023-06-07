@@ -1,7 +1,9 @@
 // @ts-nocheck
 'use client';
+import useManufacturer from '@/store/manufacturer';
+import { manFetcher } from '@/util/fetcher';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Options from './options';
 import Specs from './specs';
 
@@ -13,13 +15,18 @@ export default function CarCard({
   model_id,
 }: CarData) {
   const [models, setModels] = useState([]);
-
+  const [manufacturers, setManufacturers] = useManufacturer((s) => [
+    s.manufacturers,
+    s.setManufacturers,
+  ]);
   useEffect(() => {
+    manFetcher().then((data) => setManufacturers(data));
     fetch(`https://api2.myauto.ge/ka/getManModels?man_id=${man_id}`)
       .then((res) => res.json())
       .then((data) => setModels(data.data));
-  }, [man_id]);
+  }, [man_id, setManufacturers]);
 
+  const manufacturer = manufacturers?.find((el) => el.man_id == man_id);
   const model = models.find((el) => el.model_id == model_id);
 
   return (
@@ -35,9 +42,11 @@ export default function CarCard({
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-2'>
             {/* left side texts */}
-            <p className='text-sm font-bold text-themeBlack'>
-              {model?.model_name}
-            </p>
+            <Suspense fallback='loading'>
+              <p className='text-sm font-bold text-themeBlack'>
+                {manufacturer?.man_name} {model?.model_name}
+              </p>
+            </Suspense>
             <p className='text-sm text-gray-400 font-75bold'>2013 წ</p>
           </div>
           <div className='flex items-center gap-4'>
