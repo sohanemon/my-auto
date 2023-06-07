@@ -3,12 +3,12 @@ import { ReactSVG } from 'react-svg';
 import Specs from './specs';
 import Options from './options';
 
-export default function CarCard() {
+export default function CarCard({ photo, car_id, photo_ver }: CarData) {
   return (
     <section className='flex gap-4 p-4 bg-white rounded-2xl'>
       <Image
         className='rounded-lg'
-        src={'/assets/car.png'}
+        src={`https://static.my.ge/myauto/photos/${photo}/thumbs/${car_id}_1.jpg?v=${photo_ver}`}
         alt='car'
         width={182}
         height={144}
