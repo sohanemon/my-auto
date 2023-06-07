@@ -1,3 +1,5 @@
+import { Button } from '@/components/button';
+
 export default function AllCars() {
   return (
     <section className='col-span-3'>
@@ -5,6 +7,7 @@ export default function AllCars() {
       odit itaque cumque corporis ex expedita, saepe recusandae nemo fugit
       ducimus harum adipisci corrupti nobis laboriosam suscipit mollitia debitis
       aliquid?
+      <Button>hello</Button>
     </section>
   );
 }
