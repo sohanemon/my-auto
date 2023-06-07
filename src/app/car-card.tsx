@@ -1,9 +1,27 @@
+// @ts-nocheck
+'use client';
 import Image from 'next/image';
-import { ReactSVG } from 'react-svg';
-import Specs from './specs';
+import { useEffect, useState } from 'react';
 import Options from './options';
+import Specs from './specs';
 
-export default function CarCard({ photo, car_id, photo_ver }: CarData) {
+export default function CarCard({
+  photo,
+  car_id,
+  photo_ver,
+  man_id,
+  model_id,
+}: CarData) {
+  const [models, setModels] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://api2.myauto.ge/ka/getManModels?man_id=${man_id}`)
+      .then((res) => res.json())
+      .then((data) => setModels(data.data));
+  }, [man_id]);
+
+  const model = models.find((el) => el.model_id == model_id);
+
   return (
     <section className='flex gap-4 p-4 bg-white rounded-2xl'>
       <Image
@@ -18,7 +36,7 @@ export default function CarCard({ photo, car_id, photo_ver }: CarData) {
           <div className='flex items-center gap-2'>
             {/* left side texts */}
             <p className='text-sm font-bold text-themeBlack'>
-              LAND ROVER Range Rover Evoque
+              {model?.model_name}
             </p>
             <p className='text-sm text-gray-400 font-75bold'>2013 წ</p>
           </div>
