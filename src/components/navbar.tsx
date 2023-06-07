@@ -1,3 +1,3 @@
 export default function Navbar() {
-  return <></>;
+  return <nav className='max-w-5xl'></nav>;
 }
