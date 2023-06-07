@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { ReactSVG } from 'react-svg';
 import Specs from './specs';
+import Options from './options';
 
 export default function CarCard() {
   return (
@@ -50,11 +51,17 @@ export default function CarCard() {
             </div>
           </div>
         </div>
-        <div className='flex items-center gap-1'>
+        <div className='flex items-center justify-between'>
           {/*  end section*/}
-          <p className='text-xs font-semibold text-gray-500'>589 ნახვა</p>
-          <div className='w-1 h-1 bg-gray-500 rounded-full' />
-          <p className='text-xs font-semibold text-gray-500'>2 დღის წინ</p>
+
+          <div className='flex items-center gap-1'>
+            {/* left */}
+            <p className='text-xs font-semibold text-gray-500'>589 ნახვა</p>
+            <div className='w-1 h-1 bg-gray-500 rounded-full' />
+            <p className='text-xs font-semibold text-gray-500'>2 დღის წინ</p>
+          </div>
+          {/* right */}
+          <Options />
         </div>
       </div>
     </section>
