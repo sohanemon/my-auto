@@ -12,6 +12,8 @@ export default function CarCard({
   car_id,
   photo_ver,
   man_id,
+  car_run_km,
+  price,
   model_id,
 }: CarData) {
   const [models, setModels] = useState([]);
@@ -19,6 +21,24 @@ export default function CarCard({
     s.manufacturers,
     s.setManufacturers,
   ]);
+  const spec = [
+    {
+      icon: '/assets/union.svg',
+      text: '1.8 დატ. ჰიბრიდი',
+    },
+    {
+      icon: '/assets/speed.svg',
+      text: `${car_run_km} კმ`,
+    },
+    {
+      icon: '/assets/accelarator.svg',
+      text: 'ავტომატიკა',
+    },
+    {
+      icon: '/assets/stearing.svg',
+      text: 'მარჯვენა',
+    },
+  ];
   useEffect(() => {
     manFetcher().then((data) => setManufacturers(data));
     fetch(`https://api2.myauto.ge/ka/getManModels?man_id=${man_id}`)
@@ -67,7 +87,9 @@ export default function CarCard({
             ))}
           </div>
           <div className='flex items-center self-start mt-5 justify-self-end'>
-            <p className='text-xl font-bold text-right text-gray-800'>69,507</p>
+            <p className='text-xl font-bold text-right text-gray-800'>
+              {price}
+            </p>
             <div className='p-1.5 bg-gray-200 rounded-full h-max aspect-square'>
               <Image
                 src={'/assets/coin.svg'}
@@ -94,22 +116,3 @@ export default function CarCard({
     </section>
   );
 }
-
-const spec = [
-  {
-    icon: '/assets/union.svg',
-    text: '1.8 დატ. ჰიბრიდი',
-  },
-  {
-    icon: '/assets/speed.svg',
-    text: '200 000 კმ',
-  },
-  {
-    icon: '/assets/accelarator.svg',
-    text: 'ავტომატიკა',
-  },
-  {
-    icon: '/assets/stearing.svg',
-    text: 'მარჯვენა',
-  },
-];
