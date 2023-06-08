@@ -12,9 +12,10 @@ import {
 
 interface SelectType {
   placeholder: string;
+  data?: any[];
 }
 
-export function SelectComp({ placeholder }: SelectType) {
+export function SelectComp({ placeholder, data }: SelectType) {
   return (
     <Select>
       <SelectTrigger className='text-xs bg-white border-none rounded-lg shadow-sm w-max'>
@@ -25,9 +26,9 @@ export function SelectComp({ placeholder }: SelectType) {
       </SelectTrigger>
       <SelectContent className='bg-white '>
         <SelectGroup>
-          {Array.from(Array(5)).map((el, idx) => (
-            <SelectItem key={idx} value={idx + 'test'}>
-              Test {idx}
+          {data?.map((el, idx) => (
+            <SelectItem key={el.category_id} value={el.seo_title}>
+              {el.title}
             </SelectItem>
           ))}
         </SelectGroup>

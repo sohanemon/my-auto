@@ -8,6 +8,7 @@ export default async function AllCars() {
 
   return (
     <section className='col-span-3 space-y-3'>
+      {/* @ts-ignore */}
       <AllCarsHeader />
       {cars?.map((car: CarData) => (
         // @ts-ignore
