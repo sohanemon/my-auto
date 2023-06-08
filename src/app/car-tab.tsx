@@ -1,5 +1,6 @@
 import Heading from '@/components/ui/heading';
 import { SelectComp } from './select-comp';
+import Switch from '@/components/ui/switch';
 
 export default function CarTab() {
   return (
@@ -17,6 +18,9 @@ export default function CarTab() {
         <SelectComp />
       </div>
       <div className='h-px -m-6 bg-gray-200' />
+      <div className='flex items-center justify-between'>
+        <Heading>ფასი</Heading> <Switch />
+      </div>
     </>
   );
 }
