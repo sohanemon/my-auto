@@ -1,3 +1,4 @@
+import AllCarsHeader from './all-cars-header';
 import CarCard from './car-card';
 
 export default async function AllCars() {
@@ -7,6 +8,7 @@ export default async function AllCars() {
 
   return (
     <section className='col-span-3 space-y-3'>
+      <AllCarsHeader />
       {cars?.map((car: CarData) => (
         // @ts-ignore
         <CarCard key={car.car_id} {...car} />

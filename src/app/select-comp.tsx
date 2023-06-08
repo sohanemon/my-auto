@@ -10,13 +10,20 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-export function SelectComp() {
+interface SelectType {
+  placeholder: string;
+}
+
+export function SelectComp({ placeholder }: SelectType) {
   return (
     <Select>
-      <SelectTrigger>
-        <SelectValue defaultValue={3 + 'test'} placeholder='Select something' />
+      <SelectTrigger className='text-xs bg-white border-none rounded-lg shadow-sm w-max'>
+        <SelectValue
+          defaultValue={3 + 'test'}
+          placeholder={placeholder || 'Nothing here'}
+        />
       </SelectTrigger>
-      <SelectContent className='bg-white'>
+      <SelectContent className='bg-white '>
         <SelectGroup>
           {Array.from(Array(5)).map((el, idx) => (
             <SelectItem key={idx} value={idx + 'test'}>

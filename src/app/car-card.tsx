@@ -96,7 +96,7 @@ export default function CarCard({
               <Specs key={el.text} {...el} />
             ))}
           </div>
-          <div className='flex items-center self-start mt-5 justify-self-end'>
+          <div className='flex items-center self-start gap-1 mt-5 justify-self-end'>
             <p className='text-xl font-bold text-right text-gray-800'>
               {price_value}
             </p>

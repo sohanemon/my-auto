@@ -10,7 +10,7 @@ export default function FilterTabs() {
     <>
       <Tabs.Root
         defaultValue='car'
-        className='max-w-[220px] rounded-t-lg mt-5 overflow-hidden bg-white'
+        className='max-w-[220px] rounded-t-lg mt-5 overflow-hidden bg-white shadow-lg'
       >
         <Tabs.List className='grid grid-cols-3 bg-gray-50 divide-x-[1px] divide-gray-200'>
           {data.map((el) => (
