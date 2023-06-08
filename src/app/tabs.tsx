@@ -1,7 +1,9 @@
 'use client';
+import Heading from '@/components/ui/heading';
 import * as Tabs from '@radix-ui/react-tabs';
 import { ReactSVG } from 'react-svg';
 import { SelectComp } from './select-comp';
+import CarTab from './car-tab';
 
 export default function FilterTabs() {
   return (
@@ -24,10 +26,11 @@ export default function FilterTabs() {
             </Tabs.Trigger>
           ))}
         </Tabs.List>
-        <Tabs.Content value='car' className='p-6'>
-          <SelectComp />
+        <Tabs.Content value='car' className='p-6 space-y-5'>
+          <CarTab />
         </Tabs.Content>
-        <Tabs.Content value='bike'>hush</Tabs.Content>
+        <Tabs.Content value='tractor'>tractor section</Tabs.Content>
+        <Tabs.Content value='bike'>bike section</Tabs.Content>
       </Tabs.Root>
     </>
   );

@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply bg-themeBg;
+    @apply bg-themeBg text-themeBlack;
   }
 }
