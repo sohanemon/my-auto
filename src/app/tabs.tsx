@@ -5,7 +5,10 @@ import { ReactSVG } from 'react-svg';
 export default function FilterTabs() {
   return (
     <>
-      <Tabs.Root defaultValue='car' className='max-w-[220px]'>
+      <Tabs.Root
+        defaultValue='car'
+        className='max-w-[220px] rounded-t-lg mt-5 overflow-hidden'
+      >
         <Tabs.List className='grid grid-cols-3 bg-gray-50 divide-x-[1px] divide-gray-200'>
           {data.map((el) => (
             <Tabs.Trigger
