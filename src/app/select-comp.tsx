@@ -10,12 +10,13 @@ import {
 interface SelectType {
   placeholder?: string;
   data?: any[];
+  type?: 'manufactures' | 'categories' | 'deal type' | 'period' | 'sorting';
 }
 
-export function SelectComp({ placeholder, data }: SelectType) {
+export function SelectComp({ placeholder, data, type }: SelectType) {
   return (
     <Select>
-      <SelectTrigger className='text-xs bg-white border-none rounded-lg shadow-sm w-max'>
+      <SelectTrigger className='w-full text-xs bg-white border-none rounded-lg shadow-sm whitespace-nowrap'>
         <SelectValue
           defaultValue={3 + 'test'}
           placeholder={placeholder || 'Nothing here'}
@@ -23,11 +24,18 @@ export function SelectComp({ placeholder, data }: SelectType) {
       </SelectTrigger>
       <SelectContent className='bg-white '>
         <SelectGroup>
-          {data?.map((el, idx) => (
-            <SelectItem key={el.category_id} value={el.seo_title}>
-              {el.title}
-            </SelectItem>
-          ))}
+          {type === 'categories' &&
+            data?.map((el, idx) => (
+              <SelectItem key={el.category_id} value={el.seo_title}>
+                {el.title}
+              </SelectItem>
+            ))}
+          {type === 'manufactures' &&
+            data?.map((el, idx) => (
+              <SelectItem key={el.man_id} value={el.man_id}>
+                {el.man_name}
+              </SelectItem>
+            ))}
         </SelectGroup>
       </SelectContent>
     </Select>

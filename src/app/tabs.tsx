@@ -27,6 +27,7 @@ export default function FilterTabs() {
           ))}
         </Tabs.List>
         <Tabs.Content value='car' className='p-6 pb-0 space-y-5'>
+          {/* @ts-ignore */}
           <CarTab />
         </Tabs.Content>
         <Tabs.Content value='tractor'>tractor section</Tabs.Content>

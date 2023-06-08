@@ -4,20 +4,33 @@ import Switch from '@/components/ui/switch';
 import Input from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
-export default function CarTab() {
+export default async function CarTab() {
+  const resCat = await fetch('https://api2.myauto.ge/ka/cats/get');
+  const categories = await resCat.json();
+  const resMan = await fetch('https://static.my.ge/myauto/js/mans.json');
+  const manufactures = await resMan.json();
+
   return (
     <>
       <div>
         <Heading className='mb-2'>გარიგების ტიპი</Heading>
-        <SelectComp />
+        <SelectComp placeholder='იყიდება' />
       </div>
       <div>
         <Heading className='mb-2'>მწარმოებელი</Heading>
-        <SelectComp />
+        <SelectComp
+          placeholder='ყველა მწარმოებელი'
+          data={manufactures}
+          type='manufactures'
+        />
       </div>
       <div>
         <Heading className='mb-2'>კატეგორია</Heading>
-        <SelectComp />
+        <SelectComp
+          placeholder='ყველა კატეგორია'
+          data={categories.data}
+          type='categories'
+        />
       </div>
       <div className='h-px -m-6 bg-gray-200' />
       <div>
