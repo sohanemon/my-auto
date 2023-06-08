@@ -1,4 +1,5 @@
 'use client';
+import Dropdown from '@/components/dropdown';
 import * as Tabs from '@radix-ui/react-tabs';
 import { ReactSVG } from 'react-svg';
 
@@ -23,7 +24,9 @@ export default function FilterTabs() {
             </Tabs.Trigger>
           ))}
         </Tabs.List>
-        <Tabs.Content value='car'>hush car</Tabs.Content>
+        <Tabs.Content value='car'>
+          <Dropdown />
+        </Tabs.Content>
         <Tabs.Content value='bike'>hush</Tabs.Content>
       </Tabs.Root>
     </>
