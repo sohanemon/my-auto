@@ -1,3 +1,4 @@
+'use client';
 import {
   Select,
   SelectContent,
@@ -6,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import useFilter from '@/store/filter';
 
 interface SelectType {
   placeholder?: string;
@@ -14,6 +16,7 @@ interface SelectType {
 }
 
 export function SelectComp({ placeholder, data, type }: SelectType) {
+  const setSortingType = useFilter((s) => s.setSortingType);
   return (
     <Select>
       <SelectTrigger className='w-full text-xs bg-white border-none rounded-lg shadow-sm whitespace-nowrap'>
@@ -38,7 +41,11 @@ export function SelectComp({ placeholder, data, type }: SelectType) {
             ))}
           {type === 'sorting' &&
             data?.map((el, idx) => (
-              <SelectItem key={el} value={el}>
+              <SelectItem
+                onClick={() => setSortingType(el)}
+                key={el}
+                value={el}
+              >
                 {el}
               </SelectItem>
             ))}
