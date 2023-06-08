@@ -10,10 +10,15 @@ import Specs from './specs';
 export default function CarCard({
   photo,
   car_id,
+  right_wheel,
+  views,
   photo_ver,
   man_id,
   car_run_km,
-  price,
+  prod_year,
+  gear_type_id,
+  fuel_type_id,
+  price_value,
   model_id,
 }: CarData) {
   const [models, setModels] = useState([]);
@@ -24,7 +29,7 @@ export default function CarCard({
   const spec = [
     {
       icon: '/assets/union.svg',
-      text: '1.8 დატ. ჰიბრიდი',
+      text: fuel_type_id == 1 ? 'gas' : fuel_type_id == 2 ? 'petrol' : 'diesel',
     },
     {
       icon: '/assets/speed.svg',
@@ -32,11 +37,16 @@ export default function CarCard({
     },
     {
       icon: '/assets/accelarator.svg',
-      text: 'ავტომატიკა',
+      text:
+        gear_type_id == 1
+          ? 'manual'
+          : gear_type_id == 2
+          ? 'automatic'
+          : 'tiptronic',
     },
     {
       icon: '/assets/stearing.svg',
-      text: 'მარჯვენა',
+      text: right_wheel ? 'right' : 'left',
     },
   ];
   useEffect(() => {
@@ -67,7 +77,7 @@ export default function CarCard({
                 {manufacturer?.man_name} {model?.model_name}
               </p>
             </Suspense>
-            <p className='text-sm text-gray-400 font-75bold'>2013 წ</p>
+            <p className='text-sm text-gray-400 font-75bold'>{prod_year} წ</p>
           </div>
           <div className='flex items-center gap-4'>
             {/* right side texts */}
@@ -88,7 +98,7 @@ export default function CarCard({
           </div>
           <div className='flex items-center self-start mt-5 justify-self-end'>
             <p className='text-xl font-bold text-right text-gray-800'>
-              {price}
+              {price_value}
             </p>
             <div className='p-1.5 bg-gray-200 rounded-full h-max aspect-square'>
               <Image
@@ -105,7 +115,7 @@ export default function CarCard({
 
           <div className='flex items-center gap-1'>
             {/* left */}
-            <p className='text-xs font-semibold text-gray-500'>589 ნახვა</p>
+            <p className='text-xs font-semibold text-gray-500'>{views} ნახვა</p>
             <div className='w-1 h-1 bg-gray-500 rounded-full' />
             <p className='text-xs font-semibold text-gray-500'>2 დღის წინ</p>
           </div>
