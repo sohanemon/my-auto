@@ -1,14 +1,14 @@
 'use client';
-import Dropdown from '@/components/dropdown';
 import * as Tabs from '@radix-ui/react-tabs';
 import { ReactSVG } from 'react-svg';
+import { SelectComp } from './select-comp';
 
 export default function FilterTabs() {
   return (
     <>
       <Tabs.Root
         defaultValue='car'
-        className='max-w-[220px] rounded-t-lg mt-5 overflow-hidden'
+        className='max-w-[220px] rounded-t-lg mt-5 overflow-hidden bg-white'
       >
         <Tabs.List className='grid grid-cols-3 bg-gray-50 divide-x-[1px] divide-gray-200'>
           {data.map((el) => (
@@ -24,8 +24,8 @@ export default function FilterTabs() {
             </Tabs.Trigger>
           ))}
         </Tabs.List>
-        <Tabs.Content value='car'>
-          <Dropdown />
+        <Tabs.Content value='car' className='p-6'>
+          <SelectComp />
         </Tabs.Content>
         <Tabs.Content value='bike'>hush</Tabs.Content>
       </Tabs.Root>
