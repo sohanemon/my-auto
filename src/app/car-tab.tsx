@@ -1,6 +1,7 @@
 import Heading from '@/components/ui/heading';
 import { SelectComp } from './select-comp';
 import Switch from '@/components/ui/switch';
+import Input from '@/components/ui/input';
 
 export default function CarTab() {
   return (
@@ -21,6 +22,11 @@ export default function CarTab() {
       <div>
         <div className='flex items-center justify-between'>
           <Heading>ფასი</Heading> <Switch />
+        </div>
+        <div className='flex items-center gap-1'>
+          <Input placeholder='დან' />
+          <p>-</p>
+          <Input placeholder='მდე' />
         </div>
       </div>
     </>
