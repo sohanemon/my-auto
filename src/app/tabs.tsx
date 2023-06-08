@@ -6,16 +6,16 @@ export default function FilterTabs() {
   return (
     <>
       <Tabs.Root defaultValue='car' className='max-w-[220px]'>
-        <Tabs.List className='grid grid-cols-3 bg-gray-100 divide-x-[1px] '>
+        <Tabs.List className='grid grid-cols-3 bg-gray-50 divide-x-[1px] divide-gray-200'>
           {data.map((el) => (
             <Tabs.Trigger
-              className='grid h-11 place-items-center data-[state=active]:bg-white group'
+              className='grid border-b-2 border-gray-200 h-11 place-items-center aria-selected:bg-white group aria-selected:!border-b-themeRed '
               key={el.title}
               value={el.title}
             >
               <ReactSVG
                 src={el.icon}
-                className='group-data-[state=active]:text-themeRed'
+                className='text-themeGray group-aria-selected:text-themeRed'
               />
             </Tabs.Trigger>
           ))}

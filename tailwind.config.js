@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         themeBg: '#F2F3F6',
         themeBlack: '#272A37',
+        themeGray: '#8C929B',
         themeRed: '#FD4100',
         themeFuschia: '#FF3B30',
         themeViolet: '#4A6CFA',
