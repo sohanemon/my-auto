@@ -8,8 +8,16 @@ export default function AllCarsHeader() {
 
       <div className='flex items-center gap-3'>
         <SelectComp placeholder='ბოლო 3 საათი' />
-        <SelectComp placeholder='თარიღი კლებადი' />
+        <SelectComp data={sortingConst} type='sorting' placeholder='თარიღი კლებადი' />
       </div>
     </div>
   );
 }
+
+const sortingConst = [
+  'თარიღი კლებადი',
+  'ფასი კლებადი',
+  'ფასი ზრდადი',
+  'გარბენი კლებადი',
+  'გარბენი ზრდადი',
+];

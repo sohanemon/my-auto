@@ -36,6 +36,12 @@ export function SelectComp({ placeholder, data, type }: SelectType) {
                 {el.man_name}
               </SelectItem>
             ))}
+          {type === 'sorting' &&
+            data?.map((el, idx) => (
+              <SelectItem key={el} value={el}>
+                {el}
+              </SelectItem>
+            ))}
         </SelectGroup>
       </SelectContent>
     </Select>
