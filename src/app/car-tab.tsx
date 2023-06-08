@@ -18,8 +18,10 @@ export default function CarTab() {
         <SelectComp />
       </div>
       <div className='h-px -m-6 bg-gray-200' />
-      <div className='flex items-center justify-between'>
-        <Heading>ფასი</Heading> <Switch />
+      <div>
+        <div className='flex items-center justify-between'>
+          <Heading>ფასი</Heading> <Switch />
+        </div>
       </div>
     </>
   );
