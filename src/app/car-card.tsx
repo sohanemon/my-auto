@@ -29,7 +29,7 @@ export default function CarCard({
   const spec = [
     {
       icon: '/assets/union.svg',
-      text: fuel_type_id == 1 ? 'gas' : fuel_type_id == 2 ? 'petrol' : 'diesel',
+      text: fuel_type_id == 1 ? 'gas' : fuel_type_id == 2 ? 'petrol' : 'hybrid',
     },
     {
       icon: '/assets/speed.svg',
