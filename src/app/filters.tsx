@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import FilterTabs from './tabs';
 
 export default function Filters() {
   return (
@@ -21,6 +22,7 @@ export default function Filters() {
         />
         <p className='text-xs text-themeRed'>იყიდება</p>
       </div>
+      <FilterTabs />
     </section>
   );
 }
