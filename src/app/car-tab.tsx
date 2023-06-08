@@ -23,7 +23,7 @@ export default function CarTab() {
         <div className='flex items-center justify-between'>
           <Heading>ფასი</Heading> <Switch />
         </div>
-        <div className='flex items-center gap-1'>
+        <div className='flex items-center gap-1 mt-3'>
           <Input placeholder='დან' />
           <p>-</p>
           <Input placeholder='მდე' />
