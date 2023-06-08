@@ -26,7 +26,7 @@ export default function FilterTabs() {
             </Tabs.Trigger>
           ))}
         </Tabs.List>
-        <Tabs.Content value='car' className='p-6 space-y-5'>
+        <Tabs.Content value='car' className='p-6 pb-0 space-y-5'>
           <CarTab />
         </Tabs.Content>
         <Tabs.Content value='tractor'>tractor section</Tabs.Content>

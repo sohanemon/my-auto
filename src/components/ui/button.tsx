@@ -2,13 +2,13 @@ import cn from '@/util/cn';
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
-const buttonVariants = cva('rounded-full', {
+const buttonVariants = cva('rounded-lg', {
   variants: {
     variant: {
-      default: 'bg-themeViolet text-white',
+      default: 'bg-themeRed text-white',
     },
     size: {
-      default: 'h-10 py-2 px-4 ',
+      default: 'h-8 px-4 text-sm font-semibold',
     },
   },
   defaultVariants: {

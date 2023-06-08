@@ -2,6 +2,7 @@ import Heading from '@/components/ui/heading';
 import { SelectComp } from './select-comp';
 import Switch from '@/components/ui/switch';
 import Input from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 export default function CarTab() {
   return (
@@ -28,6 +29,9 @@ export default function CarTab() {
           <p>-</p>
           <Input placeholder='მდე' />
         </div>
+      </div>
+      <div className='grid h-16 px-6 -m-6 shadow-2xl place-items-center'>
+        <Button className='w-full'>ძებნა 197,963</Button>
       </div>
     </>
   );
