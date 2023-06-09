@@ -10,11 +10,19 @@ export default function AllCars() {
   const cars: CarData[] = useCars((s) => s.cars);
   const sortingType = useFilter((s) => s.sortingType);
   const selectedCategory = useFilter((s) => s.selectedCategory);
+  const selectedManufacturer = useFilter((s) => s.selectedManufacturer);
+
+  const filteredByManufacturer: CarData[] = useMemo(() => {
+    if (!selectedManufacturer) return cars;
+    return cars.filter((car) => car.man_id == selectedManufacturer);
+  }, [cars, selectedManufacturer]);
 
   const filteredByCategory: CarData[] = useMemo(() => {
-    if (!selectedCategory) return cars;
-    return cars.filter((car) => car.category_id == selectedCategory);
-  }, [cars, selectedCategory]);
+    if (!selectedCategory) return filteredByManufacturer;
+    return filteredByManufacturer.filter(
+      (car) => car.category_id == selectedCategory
+    );
+  }, [filteredByManufacturer, selectedCategory]);
 
   const filteredBySorting: CarData[] = useMemo(() => {
     switch (sortingType) {

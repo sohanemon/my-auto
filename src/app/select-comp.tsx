@@ -18,10 +18,12 @@ interface SelectType {
 export function SelectComp({ placeholder, data, type }: SelectType) {
   const setSortingType = useFilter((s) => s.setSortingType);
   const setSelectedCategory = useFilter((s) => s.setSelectedCategory);
+  const setSelectedManufacturer = useFilter((s) => s.setSelectedManufacturer);
 
   function handleChange(value: any) {
     if (type === 'sorting') return setSortingType(value);
     if (type === 'categories') return setSelectedCategory(value);
+    if (type === 'manufactures') return setSelectedManufacturer(value);
   }
 
   return (
