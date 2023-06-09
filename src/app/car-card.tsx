@@ -83,7 +83,7 @@ export default function CarCard({
       </div>
       <div className='relative max-sm:grow max-sm:basis-full'>
         <Image
-          className='w-full rounded-lg'
+          className='object-cover w-full rounded-lg max-sm:h-60'
           src={`https://static.my.ge/myauto/photos/${photo}/thumbs/${car_id}_1.jpg?v=${photo_ver}`}
           alt='car'
           width={182}
@@ -94,7 +94,7 @@ export default function CarCard({
           alt='love'
           width={19}
           height={16}
-          className='absolute right-4 top-4'
+          className='absolute text-white right-4 top-4'
         />
       </div>
       <div className='grow'>
