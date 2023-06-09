@@ -80,13 +80,22 @@ export default function CarCard({
           </div>
         </div>
       </div>
-      <Image
-        className='rounded-lg max-sm:grow max-sm:basis-full'
-        src={`https://static.my.ge/myauto/photos/${photo}/thumbs/${car_id}_1.jpg?v=${photo_ver}`}
-        alt='car'
-        width={182}
-        height={144}
-      />
+      <div className='relative max-sm:grow max-sm:basis-full'>
+        <Image
+          className='w-full rounded-lg'
+          src={`https://static.my.ge/myauto/photos/${photo}/thumbs/${car_id}_1.jpg?v=${photo_ver}`}
+          alt='car'
+          width={182}
+          height={144}
+        />
+        <Image
+          src={'/assets/favorite.svg'}
+          alt='love'
+          width={19}
+          height={16}
+          className='absolute right-4 top-4'
+        />
+      </div>
       <div className='grow'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-2'>
