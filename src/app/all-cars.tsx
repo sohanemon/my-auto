@@ -7,11 +7,6 @@ import CarCard from './car-card';
 
 export default function AllCars() {
   const cars: CarData[] = useFilter((s) => s.cars);
-  const sortingType = useFilter((s) => s.sortingType);
-  const selectedCategory = useFilter((s) => s.selectedCategory);
-  const selectedManufacturer = useFilter((s) => s.selectedManufacturer);
-  const selectedPeriod = useFilter((s) => s.selectedPeriod);
-  const selectedPriceRange = useFilter((s) => s.selectedPriceRange);
 
   // const filteredByPriceRange: CarData[] = useMemo(() => {
   //   if (!selectedPriceRange[0] || !selectedPriceRange[1]) return cars;
