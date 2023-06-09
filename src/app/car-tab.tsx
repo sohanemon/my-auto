@@ -9,12 +9,8 @@ import useFilter from '@/store/filter';
 import useManufacturer from '@/store/manufacturer';
 
 export default function CarTab() {
-  const getCategories = useFilter((s) => s.getCategories);
   const categories = useFilter((s) => s.categories);
   const manufacturers = useManufacturer((s) => s.manufacturers);
-  useEffect(() => {
-    getCategories();
-  }, [getCategories]);
 
   return (
     <>
