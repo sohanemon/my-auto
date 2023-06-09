@@ -46,7 +46,7 @@ export function SelectComp({ placeholder, data, type }: SelectType) {
           {type === 'sorting' &&
             data?.map((el) => (
               <SelectItem key={el} value={el}>
-                {el} lol
+                {el}
               </SelectItem>
             ))}
         </SelectGroup>
