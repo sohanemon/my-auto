@@ -3,7 +3,7 @@ import { SelectComp } from './select-comp';
 
 export default function AllCarsHeader() {
   return (
-    <div className='flex items-center justify-between'>
+    <div className='flex items-center justify-between max-sm:hidden'>
       <Heading className=''>176047 განცხადება</Heading>
 
       <div className='flex items-center gap-3'>

@@ -3,7 +3,7 @@ import FilterTabs from './tabs';
 
 export default function Filters() {
   return (
-    <section className='pt-3'>
+    <section className='pt-3 max-sm:hidden'>
       <div className='flex items-center gap-2 font-semibold'>
         {/* bread camb */}
         <p className='text-xs text-gray-500 '>მთავარი</p>
