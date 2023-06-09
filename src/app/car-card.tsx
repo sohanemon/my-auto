@@ -141,7 +141,7 @@ export default function CarCard({
             </div>
           </div>
         </div>
-        <div className='absolute bottom-0 flex items-center justify-between'>
+        <div className='absolute inset-x-0 bottom-0 flex items-center justify-between w-full'>
           {/*  end section*/}
 
           <div className='flex items-center gap-1'>
