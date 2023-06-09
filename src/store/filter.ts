@@ -10,6 +10,7 @@ interface StoreType {
   categories: any[];
   selectedManufacturer: number;
   selectedCategory: number;
+  page: number;
   selectedSorting: string;
   selectedPeriod: string;
   selectedPriceRange: [number, number];
@@ -27,6 +28,7 @@ const store: StoreType = (set: Function, get: Function) => ({
   isDollar: false,
   isLoading: true,
   categories: null,
+  page: 1,
   total: null,
   selectedSorting: 1,
   selectedCategory: null,
@@ -42,7 +44,7 @@ const store: StoreType = (set: Function, get: Function) => ({
         get().selectedCategory || ''
       }&Mans=${get().selectedManufacturer || ''}&PriceFrom${
         get().selectedPriceRange[0] || ''
-      }=&PriceTo=${get().selectedPriceRange[1] || ''}`
+      }=&PriceTo=${get().selectedPriceRange[1] || ''}&Page=${get().page || ''}&`
     );
     const data = await res.json();
     console.log('🛑 ~ getCars ~ data:', data);
@@ -62,6 +64,12 @@ const store: StoreType = (set: Function, get: Function) => ({
   setSelectedSorting(id) {
     set((s: StoreType) => {
       s.selectedSorting = id;
+    });
+    get().getCars();
+  },
+  setPage(id) {
+    set((s: StoreType) => {
+      s.page = id;
     });
     get().getCars();
   },
