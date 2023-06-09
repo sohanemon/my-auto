@@ -63,7 +63,7 @@ export default function CarCard({
   const model = models.find((el) => el.model_id == model_id);
 
   return (
-    <section className='flex gap-4 p-4 bg-white max-sm:flex-wrap rounded-2xl'>
+    <section className='flex gap-4 p-4 bg-white max-sm:flex-wrap sm:rounded-2xl'>
       <div className='sm:hidden'>
         <Badge className='mr-1 sm:hidden' variant={'vip-plus'} />
         <Heading className='inline-block sm:hidden'>

@@ -74,7 +74,7 @@ export default function AllCars() {
   }, [filteredByCategory, sortingType]);
 
   return (
-    <section className='col-span-4 space-y-3 sm:col-span-3 '>
+    <section className='col-span-4 max-sm:divide-y-2 sm:space-y-3 sm:col-span-3 '>
       {/* @ts-ignore */}
       <AllCarsHeader />
       {filteredBySorting?.map(
