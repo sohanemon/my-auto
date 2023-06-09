@@ -55,18 +55,21 @@ export default function Pagination() {
                 </button>
               }
               {Array.from(Array(5)).map((el, idx) => (
-                <button
-                  key={idx}
-                  aria-current='page'
-                  onClick={(e) => setPage(page + idx)}
-                  className={`relative z-10 inline-flex items-center px-4 py-2 text-sm font-semibold   focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
-                    page == idx
-                      ? 'focus-visible:outline-themeRed bg-themeRed text-white'
-                      : ''
-                  }`}
-                >
-                  {page + idx}
-                </button>
+                <>
+                  {console.log(idx, page)}
+                  <button
+                    key={idx}
+                    aria-current='page'
+                    onClick={(e) => setPage(page + idx)}
+                    className={`relative z-10 inline-flex items-center px-4 py-2 text-sm font-semibold   focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
+                      page == idx
+                        ? 'focus-visible:outline-themeRed bg-themeRed text-white'
+                        : ''
+                    }`}
+                  >
+                    {page + idx}
+                  </button>
+                </>
               ))}
 
               <a
