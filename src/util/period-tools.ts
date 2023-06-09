@@ -18,9 +18,9 @@ export function getTimeDifference(dateString) {
   const hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60));
 
   if (hoursDifference < 24) {
-    return hoursDifference;
+    return hoursDifference + ' საათის';
   } else {
     const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    return daysDifference;
+    return daysDifference + ' დღის';
   }
 }

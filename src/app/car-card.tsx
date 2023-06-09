@@ -159,7 +159,7 @@ export default function CarCard({
             <p className='text-xs font-semibold text-gray-500'>{views} ნახვა</p>
             <div className='w-1 h-1 bg-gray-500 rounded-full' />
             <p className='text-xs font-semibold text-gray-500'>
-              {getTimeDifference(order_date)} დღის წინ
+              {getTimeDifference(order_date)} წინ
             </p>
           </div>
           {/* right */}
