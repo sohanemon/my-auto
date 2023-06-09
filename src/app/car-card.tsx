@@ -132,7 +132,13 @@ export default function CarCard({
 
           <div className='flex items-center gap-1'>
             {/* left */}
-            <Image src={'/assets/hot.svg'} alt='fire' width={11} height={12} />
+            <Image
+              src={'/assets/hot.svg'}
+              alt='fire'
+              width={11}
+              height={12}
+              className='mb-1 sm:hidden'
+            />
             <p className='text-xs font-semibold text-gray-500'>{views} ნახვა</p>
             <div className='w-1 h-1 bg-gray-500 rounded-full' />
             <p className='text-xs font-semibold text-gray-500'>2 დღის წინ</p>
