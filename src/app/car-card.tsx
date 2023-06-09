@@ -84,6 +84,7 @@ export default function CarCard({
       <div className='relative max-sm:grow max-sm:basis-full'>
         <Image
           placeholder='blur'
+          blurDataURL='/assets/small.png'
           className='object-cover w-full rounded-lg max-sm:h-60'
           src={`https://static.my.ge/myauto/photos/${photo}/thumbs/${car_id}_1.jpg?v=${photo_ver}`}
           alt='car'
