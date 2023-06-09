@@ -7,15 +7,12 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-themeViolet hover:bg-themeViolet/80',
+        vip: 'bg-themeViolet hover:bg-themeViolet/80',
         'vip-plus': 'bg-themeYellow hover:bg-themeYellow/80',
         destructive:
           'bg-destructive hover:bg-destructive/80 text-destructive-foreground',
         outline: 'text-foreground',
       },
-    },
-    defaultVariants: {
-      variant: 'default',
     },
   }
 );
@@ -25,9 +22,20 @@ export interface BadgeProps
     VariantProps<typeof badgeVariants> {}
 
 function Badge({ className, variant, ...props }: BadgeProps) {
+  const innerText = React.useMemo(() => {
+    switch (variant) {
+      case 'vip-plus':
+        return 'vip +';
+      case 'vip':
+        return 'vip';
+
+      default:
+        break;
+    }
+  }, [variant]);
   return (
     <div className={cn(badgeVariants({ variant }), className)} {...props}>
-      {props.children} {variant === 'vip-plus' && '+'}
+      {innerText}
     </div>
   );
 }
