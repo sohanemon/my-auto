@@ -17,8 +17,11 @@ interface SelectType {
 
 export function SelectComp({ placeholder, data, type }: SelectType) {
   const setSortingType = useFilter((s) => s.setSortingType);
+  const setSelectedCategory = useFilter((s) => s.setSelectedCategory);
+
   function handleChange(value: any) {
     if (type === 'sorting') return setSortingType(value);
+    if (type === 'categories') return setSelectedCategory(value);
   }
 
   return (
@@ -29,11 +32,11 @@ export function SelectComp({ placeholder, data, type }: SelectType) {
           placeholder={placeholder || 'Nothing here'}
         />
       </SelectTrigger>
-      <SelectContent className='bg-white '>
+      <SelectContent className='bg-white max-h-80'>
         <SelectGroup>
           {type === 'categories' &&
             data?.map((el, idx) => (
-              <SelectItem key={el.category_id} value={el.seo_title}>
+              <SelectItem key={el.category_id} value={el.category_id}>
                 {el.title}
               </SelectItem>
             ))}
