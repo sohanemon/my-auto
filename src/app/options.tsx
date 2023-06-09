@@ -5,7 +5,8 @@ export default function Options() {
   return (
     <div className='flex items-center gap-4'>
       {option.map(({ icon, mobileOnly }) => {
-        if (mobileOnly) return;
+        if (mobileOnly)
+          return <ReactSVG className='max-sm:hidden' src={icon} key={icon} />;
         return <ReactSVG src={icon} key={icon} />;
       })}
     </div>
