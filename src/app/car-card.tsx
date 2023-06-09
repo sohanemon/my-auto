@@ -1,5 +1,6 @@
 // @ts-nocheck
 'use client';
+import Heading from '@/components/ui/heading';
 import useManufacturer from '@/store/manufacturer';
 import { manFetcher } from '@/util/fetcher';
 import Image from 'next/image';
@@ -61,6 +62,11 @@ export default function CarCard({
 
   return (
     <section className='flex gap-4 p-4 bg-white max-sm:flex-wrap rounded-2xl'>
+      <div className='sm:hidden'>
+        <Heading className='sm:hidden'>
+          {manufacturer?.man_name} {model?.model_name}
+        </Heading>
+      </div>
       <Image
         className='rounded-lg max-sm:grow max-sm:basis-full'
         src={`https://static.my.ge/myauto/photos/${photo}/thumbs/${car_id}_1.jpg?v=${photo_ver}`}
@@ -73,9 +79,9 @@ export default function CarCard({
           <div className='flex items-center gap-2'>
             {/* left side texts */}
             <Suspense fallback='loading'>
-              <p className='text-sm font-bold text-themeBlack'>
+              <Heading className='sm:hidden'>
                 {manufacturer?.man_name} {model?.model_name}
-              </p>
+              </Heading>
             </Suspense>
             <p className='text-sm text-gray-400'>{prod_year} წ</p>
           </div>
