@@ -14,10 +14,10 @@ interface StoreType {
   categories: any[];
   selectedManufacturer: number;
   selectedCategory: number;
-  selectedPeriod: number;
+  selectedPeriod: string;
   selectedPriceRange: [number, number];
   setSelectedCategory: (id: number) => void;
-  setSelectedPeriod: (id: number) => void;
+  setSelectedPeriod: (id: string) => void;
   setSelectedPriceRange: (start: number, end: number) => void;
   setSelectedManufacturer: (id: number) => void;
   setSortingType(type: SortingType): void;
