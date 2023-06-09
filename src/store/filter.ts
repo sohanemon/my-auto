@@ -1,17 +1,10 @@
 // @ts-nocheck
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
-type SortingType =
-  | 'თარიღი კლებადი'
-  | 'თარიღი ზრდადი'
-  | 'ფასი კლებადი'
-  | 'ფასი ზრდადი'
-  | 'გარბენი კლებადი'
-  | 'გარბენი ზრდადი';
+
 interface StoreType {
   cars: [];
   isDollar: boolean;
-  sortingType: SortingType;
   categories: any[];
   selectedManufacturer: number;
   selectedCategory: number;
@@ -23,7 +16,6 @@ interface StoreType {
   setSelectedPeriod: (id: string) => void;
   setSelectedPriceRange: (start: number, end: number) => void;
   setSelectedManufacturer: (id: number) => void;
-  setSortingType(type: SortingType): void;
   toggleCurrency: () => any;
   getCategories: () => any;
   getCars: () => any;
@@ -31,7 +23,6 @@ interface StoreType {
 
 const store: StoreType = (set: Function, get: Function) => ({
   isDollar: false,
-  sortingType: 'თარიღი კლებადი',
   categories: null,
   selectedSorting: 1,
   selectedCategory: null,
@@ -65,11 +56,7 @@ const store: StoreType = (set: Function, get: Function) => ({
       s.selectedManufacturer = id;
     });
   },
-  setSortingType(type: SortingType) {
-    set((s: StoreType) => {
-      s.sortingType = type;
-    });
-  },
+
   async getCategories() {
     const res = await fetch('https://api2.myauto.ge/ka/cats/get');
     const data = await res.json();
@@ -85,6 +72,7 @@ const store: StoreType = (set: Function, get: Function) => ({
     set((state: StoreType) => {
       state.selectedPeriod = time;
     });
+    get().getCars();
   },
   setSelectedPriceRange(start, end) {
     set((s: StoreType) => {
