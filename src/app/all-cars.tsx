@@ -16,17 +16,17 @@ export default function AllCars() {
         return cars.sort(
           (a, b) => new Date(a.order_date) - new Date(b.order_date)
         );
-      // date dnc
+      // date dec
       case 'თარიღი ზრდადი':
         return cars.sort(
           (a, b) => new Date(b.order_date) - new Date(a.order_date)
         );
 
       // price dec
-      case 'ფასი კლებადი':
+      case 'ფასი ზრდადი':
         return cars.sort((a, b) => b.price - a.price);
       // price inc
-      case 'ფასი ზრდადი':
+      case 'ფასი კლებადი':
         return cars.sort((a, b) => a.price - b.price);
       // run inc
       case 'გარბენი კლებადი':

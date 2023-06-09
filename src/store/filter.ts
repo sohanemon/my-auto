@@ -11,7 +11,9 @@ type SortingType =
 interface StoreType {
   isDollar: boolean;
   sortingType: SortingType;
+  selectedCategory: number;
   categories: any[];
+  setSelectedCategory: (id: number) => void;
   setSortingType(type: SortingType): void;
   toggleCurrency: () => any;
   getCategories: () => any;
@@ -21,9 +23,13 @@ const store: StoreType = (set: Function) => ({
   isDollar: false,
   sortingType: 'თარიღი კლებადი',
   categories: null,
+  selectedCategory: null,
+  setSelectedCategory(id) {
+    set((s: StoreType) => {
+      s.selectedCategory = id;
+    });
+  },
   setSortingType(type: SortingType) {
-    console.log('🛑 ~ setSortingType ~ type:', type);
-
     set((s: StoreType) => {
       s.sortingType = type;
     });
