@@ -40,6 +40,8 @@ const store: StoreType = (set: Function, get: Function) => ({
       `https://api2.myauto.ge/ka/products/?Period=${get().selectedPeriod}`
     );
     const data = await res.json();
+    console.log('🛑 ~ getCars ~ data:', data);
+
     set((s) => ({ ...s, cars: data.data.items }));
   },
   setSelectedCategory(id) {
