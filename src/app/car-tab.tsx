@@ -5,18 +5,20 @@ import Input from '@/components/ui/input';
 import Switch from '@/components/ui/switch';
 import useFilter from '@/store/filter';
 import useManufacturer from '@/store/manufacturer';
-import { SelectComp } from './select-comp';
 import { useRef } from 'react';
+import { SelectComp } from './select-comp';
 
 export default function CarTab() {
   const categories = useFilter((s) => s.categories);
   const setSelectedPriceRange = useFilter((s) => s.setSelectedPriceRange);
+  const getCars = useFilter((s) => s.getCars);
   const manufacturers = useManufacturer((s) => s.manufacturers);
   const inputRef = useRef<HTMLFormElement>(null);
 
   function handleSubmit() {
     const form = inputRef.current;
     setSelectedPriceRange(form?.start.value, form?.end.value);
+    getCars();
   }
 
   return (
