@@ -16,13 +16,13 @@ interface SelectType {
 }
 
 export function SelectComp({ placeholder, data, type }: SelectType) {
-  const setSortingType = useFilter((s) => s.setSortingType);
+  const setSelectedSorting = useFilter((s) => s.setSelectedSorting);
   const setSelectedCategory = useFilter((s) => s.setSelectedCategory);
   const setSelectedManufacturer = useFilter((s) => s.setSelectedManufacturer);
   const setSelectedPeriod = useFilter((s) => s.setSelectedPeriod);
 
   function handleChange(value: any) {
-    if (type === 'sorting') return setSortingType(value);
+    if (type === 'sorting') return setSelectedSorting(value);
     if (type === 'categories') return setSelectedCategory(value);
     if (type === 'manufactures') return setSelectedManufacturer(value);
     if (type === 'period') return setSelectedPeriod(value);
@@ -51,8 +51,8 @@ export function SelectComp({ placeholder, data, type }: SelectType) {
               </SelectItem>
             ))}
           {type === 'sorting' &&
-            data?.map((el) => (
-              <SelectItem key={el} value={el}>
+            data?.map((el, idx) => (
+              <SelectItem key={el} value={idx + '1'}>
                 {el}
               </SelectItem>
             ))}
