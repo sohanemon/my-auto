@@ -10,3 +10,11 @@ export function isHourOld(date: string, hour: string) {
   const parsedOrderDate = new Date(date);
   return currentDate - parsedOrderDate >= hourInMilliseconds;
 }
+
+export function getTimeDifferenceInDays(dateString) {
+  const orderDateTime = new Date(dateString).getTime();
+  const currentTime = Date.now();
+  const timeDifference = currentTime - orderDateTime;
+  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  return daysDifference;
+}
