@@ -66,6 +66,14 @@ export default function CarCard({
         <Heading className='sm:hidden'>
           {manufacturer?.man_name} {model?.model_name}
         </Heading>
+        <div className='flex items-center self-start gap-1 mt-5 sm:hidden justify-self-end'>
+          <p className='text-xl font-bold text-right text-gray-800'>
+            {price_value}
+          </p>
+          <div className='p-1.5 bg-gray-200 rounded-full h-max aspect-square'>
+            <Image src={'/assets/coin.svg'} alt='coin' width={13} height={12} />
+          </div>
+        </div>
       </div>
       <Image
         className='rounded-lg max-sm:grow max-sm:basis-full'
@@ -102,7 +110,7 @@ export default function CarCard({
               <Specs key={el.text} {...el} />
             ))}
           </div>
-          <div className='flex items-center self-start gap-1 mt-5 justify-self-end'>
+          <div className='flex items-center self-start gap-1 mt-5 max-sm:hidden justify-self-end'>
             <p className='text-xl font-bold text-right text-gray-800'>
               {price_value}
             </p>
