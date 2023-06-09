@@ -4,6 +4,7 @@ import Loader from '@/components/loader';
 import useFilter from '@/store/filter';
 import AllCarsHeader from './all-cars-header';
 import CarCard from './car-card';
+import Pagination from '@/components/pagination';
 
 export default function AllCars() {
   const cars: CarData[] = useFilter((s) => s.cars);
@@ -80,6 +81,7 @@ export default function AllCars() {
           ) => <CarCard key={car.car_id} {...car} />
         )
       )}
+      <Pagination />
     </section>
   );
 }

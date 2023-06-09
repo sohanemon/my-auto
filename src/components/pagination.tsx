@@ -18,17 +18,6 @@ export default function Pagination() {
         </div>
         <div className='hidden sm:flex sm:flex-1 sm:items-center sm:justify-between'>
           <div>
-            <p className='text-sm text-gray-700'>
-              Showing
-              <span className='font-medium'>1</span>
-              to
-              <span className='font-medium'>10</span>
-              of
-              <span className='font-medium'>97</span>
-              results
-            </p>
-          </div>
-          <div>
             <nav
               className='inline-flex -space-x-px rounded-md shadow-sm isolate'
               aria-label='Pagination'
