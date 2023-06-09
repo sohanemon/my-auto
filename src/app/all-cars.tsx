@@ -5,17 +5,24 @@ import useFilter from '@/store/filter';
 import { Suspense, useMemo } from 'react';
 import AllCarsHeader from './all-cars-header';
 import CarCard from './car-card';
+import { isHourOld } from '@/util/period-tools';
 
 export default function AllCars() {
   const cars: CarData[] = useCars((s) => s.cars);
   const sortingType = useFilter((s) => s.sortingType);
   const selectedCategory = useFilter((s) => s.selectedCategory);
   const selectedManufacturer = useFilter((s) => s.selectedManufacturer);
+  const selectedPeriod = useFilter((s) => s.selectedPeriod);
+
+  const filteredByPeriod: CarData[] = useMemo(() => {
+    if (!selectedPeriod) return cars;
+    return cars.filter((car) => isHourOld(car.order_date, selectedPeriod));
+  }, [cars, selectedPeriod]);
 
   const filteredByManufacturer: CarData[] = useMemo(() => {
-    if (!selectedManufacturer) return cars;
-    return cars.filter((car) => car.man_id == selectedManufacturer);
-  }, [cars, selectedManufacturer]);
+    if (!selectedManufacturer) return filteredByPeriod;
+    return filteredByPeriod.filter((car) => car.man_id == selectedManufacturer);
+  }, [filteredByPeriod, selectedManufacturer]);
 
   const filteredByCategory: CarData[] = useMemo(() => {
     if (!selectedCategory) return filteredByManufacturer;

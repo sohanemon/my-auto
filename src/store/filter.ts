@@ -12,9 +12,11 @@ interface StoreType {
   isDollar: boolean;
   sortingType: SortingType;
   categories: any[];
-  selectedCategory: number;
   selectedManufacturer: number;
+  selectedCategory: number;
+  selectedPeriod: number;
   setSelectedCategory: (id: number) => void;
+  setSelectedPeriod: (id: number) => void;
   setSelectedManufacturer: (id: number) => void;
   setSortingType(type: SortingType): void;
   toggleCurrency: () => any;
@@ -26,6 +28,8 @@ const store: StoreType = (set: Function) => ({
   sortingType: 'თარიღი კლებადი',
   categories: null,
   selectedCategory: null,
+  selectedPeriod: null,
+
   setSelectedCategory(id) {
     set((s: StoreType) => {
       s.selectedCategory = id;
@@ -52,6 +56,11 @@ const store: StoreType = (set: Function) => ({
     set((state: StoreType) => {
       state.isDollar = !state.isDollar;
     }),
+  setSelectedPeriod(time) {
+    set((state: StoreType) => {
+      state.selectedPeriod = time;
+    });
+  },
 });
 
 const useFilter = create<StoreType, [['zustand/immer', never]]>(immer(store));
