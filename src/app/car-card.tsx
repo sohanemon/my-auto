@@ -99,7 +99,7 @@ export default function CarCard({
           className='absolute text-white right-4 top-4'
         />
       </div>
-      <div className='grow'>
+      <div className='flex flex-col grow'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-2'>
             {/* left side texts */}
@@ -141,7 +141,7 @@ export default function CarCard({
             </div>
           </div>
         </div>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between justify-self-end'>
           {/*  end section*/}
 
           <div className='flex items-center gap-1'>
