@@ -21,7 +21,7 @@ export default function CarCard({
   prod_year,
   gear_type_id,
   fuel_type_id,
-  price_value,
+  price,
   model_id,
 }: CarData) {
   const [models, setModels] = useState([]);
@@ -73,9 +73,7 @@ export default function CarCard({
           {prod_year} წ
         </p>
         <div className='flex items-center self-start gap-1 mt-5 sm:hidden justify-self-end'>
-          <p className='text-xl font-bold text-right text-gray-800'>
-            {price_value}
-          </p>
+          <p className='text-xl font-bold text-right text-gray-800'>{price}</p>
           <div className='p-1.5 bg-gray-200 rounded-full h-max aspect-square'>
             <Image src={'/assets/coin.svg'} alt='coin' width={13} height={12} />
           </div>
@@ -129,7 +127,7 @@ export default function CarCard({
           </div>
           <div className='flex items-center self-start gap-1 mt-5 max-sm:hidden justify-self-end'>
             <p className='text-xl font-bold text-right text-gray-800'>
-              {price_value}
+              {price}
             </p>
             <div className='p-1.5 bg-gray-200 rounded-full h-max aspect-square'>
               <Image

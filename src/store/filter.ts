@@ -40,7 +40,9 @@ const store: StoreType = (set: Function, get: Function) => ({
         get().selectedPeriod
       }&SortOrder=${get().selectedSorting}&Cats=${
         get().selectedCategory || ''
-      }&Mans=${get().selectedManufacturer || ''}&PriceFrom=&PriceTo=`
+      }&Mans=${get().selectedManufacturer || ''}&PriceFrom${
+        get().selectedPriceRange[0] || ''
+      }=&PriceTo=${get().selectedPriceRange[1] || ''}`
     );
     const data = await res.json();
     console.log('🛑 ~ getCars ~ data:', data);
