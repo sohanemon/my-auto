@@ -20,12 +20,14 @@ export function SelectComp({ placeholder, data, type }: SelectType) {
   const setSelectedCategory = useFilter((s) => s.setSelectedCategory);
   const setSelectedManufacturer = useFilter((s) => s.setSelectedManufacturer);
   const setSelectedPeriod = useFilter((s) => s.setSelectedPeriod);
+  const setForSale = useFilter((s) => s.setForSale);
 
   function handleChange(value: any) {
     if (type === 'sorting') return setSelectedSorting(value);
     if (type === 'categories') return setSelectedCategory(value);
     if (type === 'manufactures') return setSelectedManufacturer(value);
     if (type === 'period') return setSelectedPeriod(value);
+    if (type === 'deal type') return setForSale(value);
   }
 
   return (
