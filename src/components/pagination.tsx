@@ -1,7 +1,7 @@
 export default function Pagination() {
   return (
     <>
-      <div className='flex items-center justify-between px-4 py-3 bg-white border-t border-gray-200 sm:px-6'>
+      <div className='flex items-center justify-between px-4 py-3 mx-auto border-t border-gray-200 w-max sm:px-6'>
         <div className='flex justify-between flex-1 sm:hidden'>
           <a
             href='#'
@@ -44,7 +44,7 @@ export default function Pagination() {
               <a
                 href='#'
                 aria-current='page'
-                className='relative z-10 inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-indigo-600 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                className='relative z-10 inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-themeRed focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-thembg-themeRed'
               >
                 1
               </a>
