@@ -6,6 +6,7 @@ interface StoreType {
   cars: [];
   total: number;
   isDollar: boolean;
+  isLoading: boolean;
   categories: any[];
   selectedManufacturer: number;
   selectedCategory: number;
@@ -24,6 +25,7 @@ interface StoreType {
 
 const store: StoreType = (set: Function, get: Function) => ({
   isDollar: false,
+  isLoading: true,
   categories: null,
   total: null,
   selectedSorting: 1,
@@ -32,6 +34,7 @@ const store: StoreType = (set: Function, get: Function) => ({
   selectedPriceRange: [null, null],
   cars: [],
   async getCars() {
+    set((s) => ({ ...s, isLoading: true }));
     const res = await fetch(
       `https://api2.myauto.ge/ka/products/?Period=${
         get().selectedPeriod
@@ -42,7 +45,12 @@ const store: StoreType = (set: Function, get: Function) => ({
     const data = await res.json();
     console.log('🛑 ~ getCars ~ data:', data);
 
-    set((s) => ({ ...s, cars: data.data.items, total: data.data.meta.total }));
+    set((s) => ({
+      ...s,
+      cars: data.data.items,
+      total: data.data.meta.total,
+      isLoading: false,
+    }));
   },
   setSelectedCategory(id) {
     set((s: StoreType) => {
