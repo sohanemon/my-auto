@@ -6,10 +6,18 @@ import Switch from '@/components/ui/switch';
 import useFilter from '@/store/filter';
 import useManufacturer from '@/store/manufacturer';
 import { SelectComp } from './select-comp';
+import { useRef } from 'react';
 
 export default function CarTab() {
   const categories = useFilter((s) => s.categories);
+  const setSelectedPriceRange = useFilter((s) => s.setSelectedPriceRange);
   const manufacturers = useManufacturer((s) => s.manufacturers);
+  const inputRef = useRef<HTMLFormElement>(null);
+
+  function handleSubmit() {
+    const form = inputRef.current;
+    setSelectedPriceRange(form?.start.value, form?.end.value);
+  }
 
   return (
     <>
@@ -38,14 +46,16 @@ export default function CarTab() {
         <div className='flex items-center justify-between'>
           <Heading>ფასი</Heading> <Switch />
         </div>
-        <div className='flex items-center gap-1 mt-3'>
-          <Input placeholder='დან' />
+        <form ref={inputRef} className='flex items-center gap-1 mt-3'>
+          <Input type='number' placeholder='დან' name='start' />
           <p>-</p>
-          <Input placeholder='მდე' />
-        </div>
+          <Input type='number' placeholder='მდე' name='end' />
+        </form>
       </div>
       <div className='grid h-16 px-6 -m-6 shadow-2xl place-items-center'>
-        <Button className='w-full'>ძებნა 197,963</Button>
+        <Button onClick={handleSubmit} className='w-full'>
+          ძებნა 197,963
+        </Button>
       </div>
     </>
   );

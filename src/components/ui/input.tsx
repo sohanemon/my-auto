@@ -1,10 +1,10 @@
 import cn from '@/util/cn';
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, InputHTMLAttributes } from 'react';
 
 export default function Input({
   className,
   ...props
-}: HTMLAttributes<HTMLInputElement>) {
+}: InputHTMLAttributes<HTMLInputElement>) {
   return (
     <input
       className={cn(

@@ -15,8 +15,10 @@ interface StoreType {
   selectedManufacturer: number;
   selectedCategory: number;
   selectedPeriod: number;
+  selectedPriceRange: [number, number];
   setSelectedCategory: (id: number) => void;
   setSelectedPeriod: (id: number) => void;
+  setSelectedPriceRange: (start: number, end: number) => void;
   setSelectedManufacturer: (id: number) => void;
   setSortingType(type: SortingType): void;
   toggleCurrency: () => any;
@@ -29,6 +31,7 @@ const store: StoreType = (set: Function) => ({
   categories: null,
   selectedCategory: null,
   selectedPeriod: null,
+  selectedPriceRange: [null, null],
 
   setSelectedCategory(id) {
     set((s: StoreType) => {
@@ -59,6 +62,11 @@ const store: StoreType = (set: Function) => ({
   setSelectedPeriod(time) {
     set((state: StoreType) => {
       state.selectedPeriod = time;
+    });
+  },
+  setSelectedPriceRange(start, end) {
+    set((s: StoreType) => {
+      s.selectedPriceRange = [start, end];
     });
   },
 });

@@ -13,11 +13,23 @@ export default function AllCars() {
   const selectedCategory = useFilter((s) => s.selectedCategory);
   const selectedManufacturer = useFilter((s) => s.selectedManufacturer);
   const selectedPeriod = useFilter((s) => s.selectedPeriod);
+  const selectedPriceRange = useFilter((s) => s.selectedPriceRange);
+
+  const filteredByPriceRange: CarData[] = useMemo(() => {
+    if (!selectedPriceRange[0] || !selectedPriceRange[1]) return cars;
+    return cars.filter(
+      (car) =>
+        car.price_value >= selectedPriceRange[0] &&
+        car.price_value <= selectedPriceRange[1]
+    );
+  }, [cars, selectedPriceRange]);
 
   const filteredByPeriod: CarData[] = useMemo(() => {
-    if (!selectedPeriod) return cars;
-    return cars.filter((car) => isHourOld(car.order_date, selectedPeriod));
-  }, [cars, selectedPeriod]);
+    if (!selectedPeriod) return filteredByPriceRange;
+    return filteredByPriceRange.filter((car) =>
+      isHourOld(car.order_date, selectedPeriod)
+    );
+  }, [filteredByPriceRange, selectedPeriod]);
 
   const filteredByManufacturer: CarData[] = useMemo(() => {
     if (!selectedManufacturer) return filteredByPeriod;
