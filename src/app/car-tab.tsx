@@ -1,12 +1,11 @@
 'use client';
-import Heading from '@/components/ui/heading';
-import { SelectComp } from './select-comp';
-import Switch from '@/components/ui/switch';
-import Input from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { use, useEffect } from 'react';
+import Heading from '@/components/ui/heading';
+import Input from '@/components/ui/input';
+import Switch from '@/components/ui/switch';
 import useFilter from '@/store/filter';
 import useManufacturer from '@/store/manufacturer';
+import { SelectComp } from './select-comp';
 
 export default function CarTab() {
   const categories = useFilter((s) => s.categories);
