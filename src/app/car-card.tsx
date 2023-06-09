@@ -77,7 +77,13 @@ export default function CarCard({
             {price_value}
           </p>
           <div className='p-1.5 bg-gray-200 rounded-full h-max aspect-square'>
-            <Image src={'/assets/coin.svg'} alt='coin' width={13} height={12} />
+            <Image
+              placeholder='blur'
+              src={'/assets/coin.svg'}
+              alt='coin'
+              width={13}
+              height={12}
+            />
           </div>
         </div>
       </div>
