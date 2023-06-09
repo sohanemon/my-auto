@@ -1,14 +1,12 @@
 // @ts-nocheck
 'use client';
-import useCars from '@/store/cars';
 import useFilter from '@/store/filter';
-import { Suspense, useMemo } from 'react';
+import { Suspense } from 'react';
 import AllCarsHeader from './all-cars-header';
 import CarCard from './car-card';
-import { isHourOld } from '@/util/period-tools';
 
 export default function AllCars() {
-  const cars: CarData[] = useCars((s) => s.cars);
+  const cars: CarData[] = useFilter((s) => s.cars);
   const sortingType = useFilter((s) => s.sortingType);
   const selectedCategory = useFilter((s) => s.selectedCategory);
   const selectedManufacturer = useFilter((s) => s.selectedManufacturer);

@@ -9,6 +9,7 @@ type SortingType =
   | 'გარბენი კლებადი'
   | 'გარბენი ზრდადი';
 interface StoreType {
+  cars: [];
   isDollar: boolean;
   sortingType: SortingType;
   categories: any[];
@@ -23,6 +24,7 @@ interface StoreType {
   setSortingType(type: SortingType): void;
   toggleCurrency: () => any;
   getCategories: () => any;
+  getCars: () => any;
 }
 
 const store: StoreType = (set: Function) => ({
@@ -32,7 +34,12 @@ const store: StoreType = (set: Function) => ({
   selectedCategory: null,
   selectedPeriod: null,
   selectedPriceRange: [null, null],
-
+  cars: [],
+  async getCars() {
+    const res = await fetch('https://api2.myauto.ge/ka/products/');
+    const data = await res.json();
+    set((s) => ({ ...s, cars: data.data.items }));
+  },
   setSelectedCategory(id) {
     set((s: StoreType) => {
       s.selectedCategory = id;
