@@ -54,6 +54,11 @@ const store: StoreType = (set: Function, get: Function) => ({
       s.selectedCategory = id;
     });
   },
+  setSelectedSorting(id) {
+    set((s: StoreType) => {
+      s.selectedSorting = id;
+    });
+  },
   setSelectedManufacturer(id) {
     set((s: StoreType) => {
       s.selectedManufacturer = id;
