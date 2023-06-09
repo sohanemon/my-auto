@@ -25,7 +25,7 @@ export function SelectComp({ placeholder, data, type }: SelectType) {
     if (type === 'sorting') return setSortingType(value);
     if (type === 'categories') return setSelectedCategory(value);
     if (type === 'manufactures') return setSelectedManufacturer(value);
-    if (type === 'period') return setSelectedManufacturer(value);
+    if (type === 'period') return setSelectedPeriod(value);
   }
 
   return (
