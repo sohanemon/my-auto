@@ -60,9 +60,9 @@ export default function CarCard({
   const model = models.find((el) => el.model_id == model_id);
 
   return (
-    <section className='flex gap-4 p-4 bg-white rounded-2xl'>
+    <section className='flex gap-4 p-4 bg-white max-sm:flex-wrap rounded-2xl'>
       <Image
-        className='rounded-lg'
+        className='rounded-lg max-sm:grow max-sm:basis-full'
         src={`https://static.my.ge/myauto/photos/${photo}/thumbs/${car_id}_1.jpg?v=${photo_ver}`}
         alt='car'
         width={182}
@@ -77,7 +77,7 @@ export default function CarCard({
                 {manufacturer?.man_name} {model?.model_name}
               </p>
             </Suspense>
-            <p className='text-sm text-gray-400 font-75bold'>{prod_year} წ</p>
+            <p className='text-sm text-gray-400'>{prod_year} წ</p>
           </div>
           <div className='flex items-center gap-4'>
             {/* right side texts */}
