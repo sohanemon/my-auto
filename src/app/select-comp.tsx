@@ -38,6 +38,12 @@ export function SelectComp({ placeholder, data, type }: SelectType) {
       </SelectTrigger>
       <SelectContent className='bg-white max-h-80'>
         <SelectGroup>
+          {type === 'deal type' &&
+            data?.map((el, idx) => (
+              <SelectItem key={el} value={idx + ''}>
+                {el}
+              </SelectItem>
+            ))}
           {type === 'categories' &&
             data?.map((el, idx) => (
               <SelectItem key={el.category_id} value={el.category_id}>

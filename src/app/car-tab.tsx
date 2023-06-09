@@ -25,7 +25,11 @@ export default function CarTab() {
     <>
       <div>
         <Heading className='mb-2'>გარიგების ტიპი</Heading>
-        <SelectComp placeholder='იყიდება' />
+        <SelectComp
+          type='deal type'
+          data={['ქირავდება', 'იყიდება']}
+          placeholder='იყიდება'
+        />
       </div>
       <div>
         <Heading className='mb-2'>მწარმოებელი</Heading>
