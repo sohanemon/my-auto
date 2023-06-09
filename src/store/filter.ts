@@ -4,6 +4,7 @@ import { immer } from 'zustand/middleware/immer';
 
 interface StoreType {
   cars: [];
+  total: number;
   isDollar: boolean;
   categories: any[];
   selectedManufacturer: number;
@@ -24,6 +25,7 @@ interface StoreType {
 const store: StoreType = (set: Function, get: Function) => ({
   isDollar: false,
   categories: null,
+  total: null,
   selectedSorting: 1,
   selectedCategory: null,
   selectedPeriod: null,
@@ -40,7 +42,7 @@ const store: StoreType = (set: Function, get: Function) => ({
     const data = await res.json();
     console.log('🛑 ~ getCars ~ data:', data);
 
-    set((s) => ({ ...s, cars: data.data.items }));
+    set((s) => ({ ...s, cars: data.data.items, total: data.data.meta.total }));
   },
   setSelectedCategory(id) {
     set((s: StoreType) => {
