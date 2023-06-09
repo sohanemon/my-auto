@@ -11,6 +11,7 @@ interface StoreType {
   selectedManufacturer: number;
   selectedCategory: number;
   page: number;
+  forSale: number;
   selectedSorting: string;
   selectedPeriod: string;
   selectedPriceRange: [number, number];
@@ -20,6 +21,7 @@ interface StoreType {
   setSelectedPriceRange: (start: number, end: number) => void;
   setSelectedManufacturer: (id: number) => void;
   setPage: (id: number) => void;
+  setForSale: (id: number) => void;
   toggleCurrency: () => any;
   getCategories: () => any;
   getCars: () => any;
@@ -31,6 +33,7 @@ const store: StoreType = (set: Function, get: Function) => ({
   categories: null,
   page: 1,
   total: null,
+  forSale: null,
   selectedSorting: 1,
   selectedCategory: null,
   selectedPeriod: null,
@@ -45,7 +48,9 @@ const store: StoreType = (set: Function, get: Function) => ({
         get().selectedCategory || ''
       }&Mans=${get().selectedManufacturer || ''}&PriceFrom${
         get().selectedPriceRange[0] || ''
-      }=&PriceTo=${get().selectedPriceRange[1] || ''}&Page=${get().page || ''}&`
+      }=&PriceTo=${get().selectedPriceRange[1] || ''}&Page=${
+        get().page || ''
+      }&ForRent=${get().forSale || ''}`
     );
     const data = await res.json();
     console.log('🛑 ~ getCars ~ data:', data);
@@ -77,6 +82,11 @@ const store: StoreType = (set: Function, get: Function) => ({
   setSelectedManufacturer(id) {
     set((s: StoreType) => {
       s.selectedManufacturer = id;
+    });
+  },
+  setForSale(id) {
+    set((s: StoreType) => {
+      s.forSale = id;
     });
   },
 
