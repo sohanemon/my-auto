@@ -104,7 +104,7 @@ export default function CarCard({
           <div className='flex items-center gap-2'>
             {/* left side texts */}
             <Suspense fallback='loading'>
-              <Heading className='max-sm:hidden'>
+              <Heading className='text-sm max-sm:hidden'>
                 {manufacturer?.man_name} {model?.model_name}
               </Heading>
             </Suspense>
@@ -121,7 +121,7 @@ export default function CarCard({
         </div>
         <div className='grid grid-cols-3'>
           {/* below section */}
-          <div className='flex flex-wrap col-span-2 mt-5 mb-7 gap-y-3'>
+          <div className='flex flex-wrap col-span-2 mt-5 sm:mt-10 mb-7 gap-y-3'>
             {/* spec section */}
             {spec.map((el) => (
               <Specs key={el.text} {...el} />
