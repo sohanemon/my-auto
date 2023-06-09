@@ -66,7 +66,7 @@ export default function CarCard({
         <Heading className='inline-block sm:hidden'>
           {manufacturer?.man_name} {model?.model_name}
         </Heading>
-        <p className='inline-block text-sm text-gray-400 sm:hidden'>
+        <p className='inline-block ml-2 text-sm text-gray-400 sm:hidden'>
           {prod_year} წ
         </p>
         <div className='flex items-center self-start gap-1 mt-5 sm:hidden justify-self-end'>
