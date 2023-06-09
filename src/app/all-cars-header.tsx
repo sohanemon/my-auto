@@ -7,7 +7,11 @@ export default function AllCarsHeader() {
       <Heading className=''>176047 განცხადება</Heading>
 
       <div className='flex items-center gap-3'>
-        <SelectComp placeholder='ბოლო 3 საათი' />
+        <SelectComp
+          data={[1, 2, 3, 6, 12]}
+          type='period'
+          placeholder='ბოლო 1 საათი'
+        />
         <SelectComp
           data={sortingConst}
           type='sorting'
