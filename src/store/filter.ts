@@ -33,7 +33,9 @@ const store: StoreType = (set: Function, get: Function) => ({
     const res = await fetch(
       `https://api2.myauto.ge/ka/products/?Period=${
         get().selectedPeriod
-      }&SortOrder=${get().selectedSorting}&Cats=${get().selectedCategory || ''}`
+      }&SortOrder=${get().selectedSorting}&Cats=${
+        get().selectedCategory || ''
+      }&Mans=${get().selectedManufacturer || ''}`
     );
     const data = await res.json();
     console.log('🛑 ~ getCars ~ data:', data);
