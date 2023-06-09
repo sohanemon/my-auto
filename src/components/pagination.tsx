@@ -45,11 +45,20 @@ export default function Pagination() {
                   />
                 </svg>
               </a>
-
-              {Array.from(Array(7)).map((el, idx) => (
+              {
+                <button
+                  aria-current='page'
+                  onClick={(e) => setPage(page - 1)}
+                  className='relative z-10 inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-themeRed focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-themeRed'
+                >
+                  {page - 1}
+                </button>
+              }
+              {Array.from(Array(5)).map((el, idx) => (
                 <button
                   key={idx}
                   aria-current='page'
+                  onClick={(e) => setPage(page + idx)}
                   className='relative z-10 inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-themeRed focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-thembg-themeRed'
                 >
                   {page + idx}
