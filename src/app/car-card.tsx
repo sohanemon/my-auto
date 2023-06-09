@@ -8,6 +8,7 @@ import { Suspense, useEffect, useState } from 'react';
 import Options from './options';
 import Specs from './specs';
 import { Badge } from '@/components/ui/badge';
+import { ReactSVG } from 'react-svg';
 
 export default function CarCard({
   photo,
@@ -88,7 +89,7 @@ export default function CarCard({
           width={182}
           height={144}
         />
-        <Image
+        <ReactSVG
           src={'/assets/favorite.svg'}
           alt='love'
           width={19}
