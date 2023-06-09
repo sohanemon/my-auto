@@ -8,7 +8,7 @@ export default function AllCarsHeader() {
 
       <div className='flex items-center gap-3'>
         <SelectComp
-          data={[1, 2, 3, 6, 12]}
+          data={['1h', '2h', '3h', '1d', '2d', '3d', '1w', '2w', '3w']}
           type='period'
           placeholder='ბოლო 1 საათი'
         />
