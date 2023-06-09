@@ -27,8 +27,8 @@ export default function Pagination() {
               className='inline-flex -space-x-px rounded-md shadow-sm isolate'
               aria-label='Pagination'
             >
-              <a
-                href='#'
+              <button
+                onClick={() => setPage(page - 1)}
                 className='relative inline-flex items-center px-2 py-2 text-gray-400 rounded-l-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0'
               >
                 <span className='sr-only'>Previous</span>
@@ -44,7 +44,7 @@ export default function Pagination() {
                     clipRule='evenodd'
                   />
                 </svg>
-              </a>
+              </button>
               {
                 <button
                   aria-current='page'
@@ -72,8 +72,8 @@ export default function Pagination() {
                 </>
               ))}
 
-              <a
-                href='#'
+              <button
+                onClick={() => setPage(page + 1)}
                 className='relative inline-flex items-center px-2 py-2 text-gray-400 rounded-r-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0'
               >
                 <span className='sr-only'>Next</span>
@@ -89,7 +89,7 @@ export default function Pagination() {
                     clipRule='evenodd'
                   />
                 </svg>
-              </a>
+              </button>
             </nav>
           </div>
         </div>
