@@ -1,10 +1,13 @@
+'use client';
 import Heading from '@/components/ui/heading';
 import { SelectComp } from './select-comp';
+import useFilter from '@/store/filter';
 
 export default function AllCarsHeader() {
+  const total = useFilter((s) => s.total);
   return (
     <div className='flex items-center justify-between max-sm:hidden'>
-      <Heading className=''>176047 განცხადება</Heading>
+      <Heading className=''>{total} განცხადება</Heading>
 
       <div className='flex items-center gap-3'>
         <SelectComp
