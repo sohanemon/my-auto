@@ -2,23 +2,21 @@
 'use client';
 import Loader from '@/components/loader';
 import useFilter from '@/store/filter';
-import { useMemo } from 'react';
 import AllCarsHeader from './all-cars-header';
 import CarCard from './car-card';
 
 export default function AllCars() {
   const cars: CarData[] = useFilter((s) => s.cars);
-  const selectedPriceRange = useFilter((s) => s.selectedPriceRange);
   const isLoading = useFilter((s) => s.isLoading);
 
-  const filteredByPriceRange: CarData[] = useMemo(() => {
-    if (!selectedPriceRange[0] || !selectedPriceRange[1]) return cars;
-    return cars.filter(
-      (car) =>
-        car.price_value >= selectedPriceRange[0] &&
-        car.price_value <= selectedPriceRange[1]
-    );
-  }, [cars, selectedPriceRange]);
+  // const filteredByPriceRange: CarData[] = useMemo(() => {
+  //   if (!selectedPriceRange[0] || !selectedPriceRange[1]) return cars;
+  //   return cars.filter(
+  //     (car) =>
+  //       car.price_value >= selectedPriceRange[0] &&
+  //       car.price_value <= selectedPriceRange[1]
+  //   );
+  // }, [cars, selectedPriceRange]);
 
   // const filteredByPeriod: CarData[] = useMemo(() => {
   //   if (!selectedPeriod) return filteredByPriceRange;
@@ -76,7 +74,7 @@ export default function AllCars() {
       {isLoading ? (
         <Loader />
       ) : (
-        filteredByPriceRange?.map(
+        cars?.map(
           (
             car: CarData // @ts-ignore
           ) => <CarCard key={car.car_id} {...car} />
