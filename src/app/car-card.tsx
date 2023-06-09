@@ -133,7 +133,9 @@ export default function CarCard({
 
           <div className='flex items-center gap-1'>
             {/* left */}
-            <Badge className='max-sm:hidden'>vip</Badge>
+            <Badge variant={'vip-plus'} className='max-sm:hidden'>
+              vip
+            </Badge>
             <Image
               src={'/assets/hot.svg'}
               alt='fire'
