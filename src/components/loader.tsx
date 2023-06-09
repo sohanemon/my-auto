@@ -7,7 +7,7 @@ export default function Loader() {
       <Player
         autoplay
         loop
-        className={`sticky inset-0 my-auto aspect-square`}
+        className={`sticky inset-0 my-auto w-48 aspect-square`}
         src='/assets/lottie/red-car.json'
       ></Player>
     </>
