@@ -1,14 +1,20 @@
+'use client';
 import Heading from '@/components/ui/heading';
 import { SelectComp } from './select-comp';
 import Switch from '@/components/ui/switch';
 import Input from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { use, useEffect } from 'react';
+import useFilter from '@/store/filter';
+import useManufacturer from '@/store/manufacturer';
 
-export default async function CarTab() {
-  const resCat = await fetch('https://api2.myauto.ge/ka/cats/get');
-  const categories = await resCat.json();
-  const resMan = await fetch('https://static.my.ge/myauto/js/mans.json');
-  const manufactures = await resMan.json();
+export default function CarTab() {
+  const getCategories = useFilter((s) => s.getCategories);
+  const categories = useFilter((s) => s.categories);
+  const manufacturers = useManufacturer((s) => s.manufacturers);
+  useEffect(() => {
+    getCategories();
+  }, [getCategories]);
 
   return (
     <>
@@ -20,7 +26,7 @@ export default async function CarTab() {
         <Heading className='mb-2'>მწარმოებელი</Heading>
         <SelectComp
           placeholder='ყველა მწარმოებელი'
-          data={manufactures}
+          data={manufacturers}
           type='manufactures'
         />
       </div>
@@ -28,7 +34,7 @@ export default async function CarTab() {
         <Heading className='mb-2'>კატეგორია</Heading>
         <SelectComp
           placeholder='ყველა კატეგორია'
-          data={categories.data}
+          data={categories}
           type='categories'
         />
       </div>

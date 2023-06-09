@@ -5,7 +5,6 @@ import { ReactSVG } from 'react-svg';
 
 export default function Switch() {
   const { isDollar, toggleCurrency } = useFilter();
-  console.log('🛑 ~ Switch ~ isDollar:', isDollar);
 
   return (
     <div
