@@ -64,6 +64,7 @@ export default function CarCard({
   return (
     <section className='flex gap-4 p-4 bg-white max-sm:flex-wrap rounded-2xl'>
       <div className='sm:hidden'>
+        <Badge className='mr-1 sm:hidden'>vip</Badge>
         <Heading className='inline-block sm:hidden'>
           {manufacturer?.man_name} {model?.model_name}
         </Heading>
