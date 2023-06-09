@@ -9,9 +9,7 @@ const badgeVariants = cva(
       variant: {
         vip: 'bg-themeViolet hover:bg-themeViolet/80',
         'vip-plus': 'bg-themeYellow hover:bg-themeYellow/80',
-        destructive:
-          'bg-destructive hover:bg-destructive/80 text-destructive-foreground',
-        outline: 'text-foreground',
+        's-vip': 'bg-themeYellow/50 hover:bg-themeYellow/40',
       },
     },
   }
@@ -28,7 +26,8 @@ function Badge({ className, variant, ...props }: BadgeProps) {
         return 'vip +';
       case 'vip':
         return 'vip';
-
+      case 's-vip':
+        return 's-vip';
       default:
         break;
     }
