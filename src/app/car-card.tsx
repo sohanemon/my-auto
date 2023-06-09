@@ -63,9 +63,12 @@ export default function CarCard({
   return (
     <section className='flex gap-4 p-4 bg-white max-sm:flex-wrap rounded-2xl'>
       <div className='sm:hidden'>
-        <Heading className='sm:hidden'>
+        <Heading className='inline-block sm:hidden'>
           {manufacturer?.man_name} {model?.model_name}
         </Heading>
+        <p className='inline-block text-sm text-gray-400 sm:hidden'>
+          {prod_year} წ
+        </p>
         <div className='flex items-center self-start gap-1 mt-5 sm:hidden justify-self-end'>
           <p className='text-xl font-bold text-right text-gray-800'>
             {price_value}
@@ -91,7 +94,7 @@ export default function CarCard({
                 {manufacturer?.man_name} {model?.model_name}
               </Heading>
             </Suspense>
-            <p className='text-sm text-gray-400'>{prod_year} წ</p>
+            <p className='text-sm text-gray-400 max-sm:hidden'>{prod_year} წ</p>
           </div>
           <div className='flex items-center gap-4'>
             {/* right side texts */}
