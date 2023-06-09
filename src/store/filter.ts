@@ -15,9 +15,11 @@ interface StoreType {
   categories: any[];
   selectedManufacturer: number;
   selectedCategory: number;
+  selectedSorting: string;
   selectedPeriod: string;
   selectedPriceRange: [number, number];
   setSelectedCategory: (id: number) => void;
+  setSelectedSorting: (id: number) => void;
   setSelectedPeriod: (id: string) => void;
   setSelectedPriceRange: (start: number, end: number) => void;
   setSelectedManufacturer: (id: number) => void;
@@ -31,13 +33,16 @@ const store: StoreType = (set: Function, get: Function) => ({
   isDollar: false,
   sortingType: 'თარიღი კლებადი',
   categories: null,
+  selectedSorting: 1,
   selectedCategory: null,
   selectedPeriod: null,
   selectedPriceRange: [null, null],
   cars: [],
   async getCars() {
     const res = await fetch(
-      `https://api2.myauto.ge/ka/products/?Period=${get().selectedPeriod}`
+      `https://api2.myauto.ge/ka/products/?Period=${
+        get().selectedPeriod
+      }&SortOrder=${get().selectedSorting}`
     );
     const data = await res.json();
     console.log('🛑 ~ getCars ~ data:', data);
