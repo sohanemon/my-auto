@@ -59,7 +59,7 @@ export function SelectComp({ placeholder, data, type }: SelectType) {
           {type === 'period' &&
             data?.map((el) => (
               <SelectItem key={el} value={el}>
-                ბოლო {el} საათი
+                {el}
               </SelectItem>
             ))}
         </SelectGroup>
