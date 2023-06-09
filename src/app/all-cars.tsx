@@ -4,10 +4,12 @@ import useFilter from '@/store/filter';
 import { Suspense, useMemo } from 'react';
 import AllCarsHeader from './all-cars-header';
 import CarCard from './car-card';
+import Loader from '@/components/loader';
 
 export default function AllCars() {
   const cars: CarData[] = useFilter((s) => s.cars);
   const selectedPriceRange = useFilter((s) => s.selectedPriceRange);
+  const isLoading = useFilter((s) => s.isLoading);
 
   const filteredByPriceRange: CarData[] = useMemo(() => {
     if (!selectedPriceRange[0] || !selectedPriceRange[1]) return cars;
@@ -71,13 +73,17 @@ export default function AllCars() {
     <section className='col-span-4 max-sm:divide-y-2 sm:space-y-3 sm:col-span-3 '>
       {/* @ts-ignore */}
       <AllCarsHeader />
-      {filteredByPriceRange?.map(
-        (
-          car: CarData // @ts-ignore
-        ) => (
-          <Suspense key={car.car_id} fallback='loading'>
-            <CarCard {...car} />
-          </Suspense>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        filteredByPriceRange?.map(
+          (
+            car: CarData // @ts-ignore
+          ) => (
+            <Suspense key={car.car_id} fallback='loading'>
+              <CarCard {...car} />
+            </Suspense>
+          )
         )
       )}
     </section>
