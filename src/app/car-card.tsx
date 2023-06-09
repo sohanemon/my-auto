@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Suspense, useEffect, useState } from 'react';
 import Options from './options';
 import Specs from './specs';
+import { Badge } from '@/components/ui/badge';
 
 export default function CarCard({
   photo,
@@ -132,6 +133,7 @@ export default function CarCard({
 
           <div className='flex items-center gap-1'>
             {/* left */}
+            <Badge>vip</Badge>
             <Image
               src={'/assets/hot.svg'}
               alt='fire'
