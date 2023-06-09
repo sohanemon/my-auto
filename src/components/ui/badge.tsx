@@ -7,7 +7,7 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        vip: 'bg-themeViolet hover:bg-themeViolet/80',
+        vip: 'sm:bg-themeViolet  sm:hover:bg-themeViolet/80 bg-themeRed hover:bg-themeRed/80',
         'vip-plus': 'bg-themeYellow hover:bg-themeYellow/80',
         's-vip': 'bg-themeYellow/50 hover:bg-themeYellow/40',
       },
