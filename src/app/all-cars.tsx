@@ -1,21 +1,21 @@
 // @ts-nocheck
 'use client';
 import useFilter from '@/store/filter';
-import { Suspense } from 'react';
+import { Suspense, useMemo } from 'react';
 import AllCarsHeader from './all-cars-header';
 import CarCard from './car-card';
 
 export default function AllCars() {
   const cars: CarData[] = useFilter((s) => s.cars);
 
-  // const filteredByPriceRange: CarData[] = useMemo(() => {
-  //   if (!selectedPriceRange[0] || !selectedPriceRange[1]) return cars;
-  //   return cars.filter(
-  //     (car) =>
-  //       car.price_value >= selectedPriceRange[0] &&
-  //       car.price_value <= selectedPriceRange[1]
-  //   );
-  // }, [cars, selectedPriceRange]);
+  const filteredByPriceRange: CarData[] = useMemo(() => {
+    if (!selectedPriceRange[0] || !selectedPriceRange[1]) return cars;
+    return cars.filter(
+      (car) =>
+        car.price_value >= selectedPriceRange[0] &&
+        car.price_value <= selectedPriceRange[1]
+    );
+  }, [cars]);
 
   // const filteredByPeriod: CarData[] = useMemo(() => {
   //   if (!selectedPeriod) return filteredByPriceRange;
@@ -70,7 +70,7 @@ export default function AllCars() {
     <section className='col-span-4 max-sm:divide-y-2 sm:space-y-3 sm:col-span-3 '>
       {/* @ts-ignore */}
       <AllCarsHeader />
-      {cars?.map(
+      {filteredByPriceRange?.map(
         (
           car: CarData // @ts-ignore
         ) => (
