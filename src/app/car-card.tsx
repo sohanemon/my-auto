@@ -90,13 +90,13 @@ export default function CarCard({
           <div className='flex items-center gap-2'>
             {/* left side texts */}
             <Suspense fallback='loading'>
-              <Heading className='sm:hidden'>
+              <Heading className='max-sm:hidden'>
                 {manufacturer?.man_name} {model?.model_name}
               </Heading>
             </Suspense>
             <p className='text-sm text-gray-400 max-sm:hidden'>{prod_year} წ</p>
           </div>
-          <div className='flex items-center gap-4'>
+          <div className='flex items-center gap-4 max-sm:hidden'>
             {/* right side texts */}
             <p className='text-xs font-bold leading-3 text-themeRed'>
               განბაჟება
