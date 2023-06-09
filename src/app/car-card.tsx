@@ -1,15 +1,15 @@
 // @ts-nocheck
 'use client';
+import { Badge } from '@/components/ui/badge';
 import Heading from '@/components/ui/heading';
 import useManufacturer from '@/store/manufacturer';
 import { manFetcher } from '@/util/fetcher';
+import { getTimeDifference } from '@/util/period-tools';
 import Image from 'next/image';
 import { Suspense, useEffect, useState } from 'react';
+import { ReactSVG } from 'react-svg';
 import Options from './options';
 import Specs from './specs';
-import { Badge } from '@/components/ui/badge';
-import { ReactSVG } from 'react-svg';
-import { getTimeDifferenceInDays } from '@/util/period-tools';
 
 export default function CarCard({
   photo,
@@ -159,7 +159,7 @@ export default function CarCard({
             <p className='text-xs font-semibold text-gray-500'>{views} ნახვა</p>
             <div className='w-1 h-1 bg-gray-500 rounded-full' />
             <p className='text-xs font-semibold text-gray-500'>
-              {getTimeDifferenceInDays(order_date)} დღის წინ
+              {getTimeDifference(order_date)} დღის წინ
             </p>
           </div>
           {/* right */}
