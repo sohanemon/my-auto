@@ -19,6 +19,7 @@ interface StoreType {
   setSelectedPeriod: (id: string) => void;
   setSelectedPriceRange: (start: number, end: number) => void;
   setSelectedManufacturer: (id: number) => void;
+  setPage: (id: number) => void;
   toggleCurrency: () => any;
   getCategories: () => any;
   getCars: () => any;

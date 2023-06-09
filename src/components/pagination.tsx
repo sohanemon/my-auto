@@ -1,4 +1,9 @@
+'use client';
+
+import useFilter from '@/store/filter';
+
 export default function Pagination() {
+  const [page, setPage] = useFilter((s) => [s.page, s.setPage]);
   return (
     <>
       <div className='flex items-center justify-between px-4 py-3 mx-auto border-t border-gray-200 w-max sm:px-6'>
@@ -41,13 +46,15 @@ export default function Pagination() {
                 </svg>
               </a>
 
-              <a
-                href='#'
-                aria-current='page'
-                className='relative z-10 inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-themeRed focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-thembg-themeRed'
-              >
-                1
-              </a>
+              {Array.from(Array(7)).map((el, idx) => (
+                <button
+                  key={idx}
+                  aria-current='page'
+                  className='relative z-10 inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-themeRed focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-thembg-themeRed'
+                >
+                  {page + idx}
+                </button>
+              ))}
 
               <a
                 href='#'
