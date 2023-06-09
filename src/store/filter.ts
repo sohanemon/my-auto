@@ -3,6 +3,7 @@ import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 type SortingType =
   | 'თარიღი კლებადი'
+  | 'თარიღი ზრდადი'
   | 'ფასი კლებადი'
   | 'ფასი ზრდადი'
   | 'გარბენი კლებადი'
