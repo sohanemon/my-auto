@@ -1,10 +1,10 @@
 // @ts-nocheck
 'use client';
+import Loader from '@/components/loader';
 import useFilter from '@/store/filter';
-import { Suspense, useMemo } from 'react';
+import { useMemo } from 'react';
 import AllCarsHeader from './all-cars-header';
 import CarCard from './car-card';
-import Loader from '@/components/loader';
 
 export default function AllCars() {
   const cars: CarData[] = useFilter((s) => s.cars);
@@ -79,11 +79,7 @@ export default function AllCars() {
         filteredByPriceRange?.map(
           (
             car: CarData // @ts-ignore
-          ) => (
-            <Suspense key={car.car_id} fallback='loading'>
-              <CarCard {...car} />
-            </Suspense>
-          )
+          ) => <CarCard key={car.car_id} {...car} />
         )
       )}
     </section>
