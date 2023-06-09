@@ -27,7 +27,7 @@ interface StoreType {
   getCars: () => any;
 }
 
-const store: StoreType = (set: Function) => ({
+const store: StoreType = (set: Function, get: Function) => ({
   isDollar: false,
   sortingType: 'თარიღი კლებადი',
   categories: null,
