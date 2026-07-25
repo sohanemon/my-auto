@@ -122,11 +122,11 @@
     "@jridgewell/sourcemap-codec" "1.4.14"
 
 "@lottiefiles/react-lottie-player@^3.5.3":
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/@lottiefiles/react-lottie-player/-/react-lottie-player-3.5.3.tgz#e7e848f29577bc4eede87d677a0054de29378127"
-  integrity sha512-6pGbiTMjGnPddR1ur8M/TIDCiogZMc1aKIUbMEKXKAuNeYwZ2hvqwBJ+w5KRm88ccdcU88C2cGyLVsboFlSdVQ==
+  version "3.6.0"
+  resolved "https://registry.npmjs.org/@lottiefiles/react-lottie-player/-/react-lottie-player-3.6.0.tgz"
+  integrity sha512-WK5TriLJT93VF3w4IjSVyveiedraZCnDhKzCPhpbeLgQeMi6zufxa3dXNc4HmAFRXq+LULPAy+Idv1rAfkReMA==
   dependencies:
-    lottie-web "^5.10.2"
+    lottie-web "^5.12.2"
 
 "@next/env@13.4.4":
   version "13.4.4"
@@ -232,6 +232,11 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
+"@radix-ui/primitive@1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@radix-ui/primitive/-/primitive-1.1.7.tgz#0d0929d20299f60b0cd8a0deafad79f8048f9306"
+  integrity sha512-rqWnm76nYT8HoNNqEjpgJ7Pw/DrBj5iBTrmEPo6HTX5+VJyBNOqTdv4g89G63HuR5g0AaENoAcH7Is5fF2kZ8Q==
+
 "@radix-ui/react-arrow@1.0.3":
   version "1.0.3"
   resolved "https://registry.npmjs.org/@radix-ui/react-arrow/-/react-arrow-1.0.3.tgz"
@@ -258,12 +263,22 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
+"@radix-ui/react-compose-refs@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-compose-refs/-/react-compose-refs-1.1.5.tgz#883e642c5ec0ba393dd1bf586e7e772985770d87"
+  integrity sha512-+48PbAAbq3didjJxa+OaWY2ZwgAKsNiRGyeHKszblZMQ+kcpd9pAaT11cMkGEie0vsOi3QdeTE6d5Fe3Gn61kA==
+
 "@radix-ui/react-context@1.0.1":
   version "1.0.1"
   resolved "https://registry.npmjs.org/@radix-ui/react-context/-/react-context-1.0.1.tgz"
   integrity sha512-ebbrdFoYTcuZ0v4wG5tedGnp9tzcV8awzsxYph7gXUyvnNLuTIcCk1q17JEbnVhXAKG9oX3KtchwiMIAYp9NLg==
   dependencies:
     "@babel/runtime" "^7.13.10"
+
+"@radix-ui/react-context@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-context/-/react-context-1.2.2.tgz#fe2548e98465f5f9b776c5953de35d04a8919b6b"
+  integrity sha512-RHCUGwKHDr0hDGg4X7ma4JG4/+12qxw8rkh5QKdDldlCvtja6nUx1Ef/8HVrJze81lEsgLQlqjzjGNHantgnQA==
 
 "@radix-ui/react-direction@1.0.1":
   version "1.0.1"
@@ -351,6 +366,13 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-slot" "1.0.2"
 
+"@radix-ui/react-primitive@2.1.10":
+  version "2.1.10"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-primitive/-/react-primitive-2.1.10.tgz#292b7476499d17227f337c8d1c59f270c683842a"
+  integrity sha512-MucOnzh6hR5mid6VpkbglRAMYMjKLqRnGBbjXkzjK52fuQDd1qbkx78a5P40mkcnVXJdEVxm26E9OPAiUq7nBg==
+  dependencies:
+    "@radix-ui/react-slot" "1.3.3"
+
 "@radix-ui/react-roving-focus@1.0.4":
   version "1.0.4"
   resolved "https://registry.npmjs.org/@radix-ui/react-roving-focus/-/react-roving-focus-1.0.4.tgz"
@@ -403,19 +425,24 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-compose-refs" "1.0.1"
 
-"@radix-ui/react-switch@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/@radix-ui/react-switch/-/react-switch-1.0.3.tgz"
-  integrity sha512-mxm87F88HyHztsI7N+ZUmEoARGkC22YVW5CaC+Byc+HRpuvCrOBPTAnXgf+tZ/7i0Sg/eOePGdMhUKhPaQEqow==
+"@radix-ui/react-slot@1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-slot/-/react-slot-1.3.3.tgz#ccc8c8936fff12f7e324d6917fe5167357097676"
+  integrity sha512-qx7oqnYbxnK9kYI9m317qmFmEgo6ywqWvbTogdj7cL9p3/yx4M48p7Rnw5z3H890cL/ow/EeWJsuTykeZVXP5Q==
   dependencies:
-    "@babel/runtime" "^7.13.10"
-    "@radix-ui/primitive" "1.0.1"
-    "@radix-ui/react-compose-refs" "1.0.1"
-    "@radix-ui/react-context" "1.0.1"
-    "@radix-ui/react-primitive" "1.0.3"
-    "@radix-ui/react-use-controllable-state" "1.0.1"
-    "@radix-ui/react-use-previous" "1.0.1"
-    "@radix-ui/react-use-size" "1.0.1"
+    "@radix-ui/react-compose-refs" "1.1.5"
+
+"@radix-ui/react-switch@^1.3.7":
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-switch/-/react-switch-1.3.7.tgz#54dc0d331145418c2e3ac6545c166b89cb1e186e"
+  integrity sha512-48tB/4dn2UVLBCYhTu9AuR63IHl73l/qLbLgxd86noTUor4/K4LFDAcYjK+isP5313qxaFpjPVogE7+Y0/V3Kw==
+  dependencies:
+    "@radix-ui/primitive" "1.1.7"
+    "@radix-ui/react-compose-refs" "1.1.5"
+    "@radix-ui/react-context" "1.2.2"
+    "@radix-ui/react-primitive" "2.1.10"
+    "@radix-ui/react-use-controllable-state" "1.2.6"
+    "@radix-ui/react-use-size" "1.1.4"
 
 "@radix-ui/react-tabs@^1.0.4":
   version "1.0.4"
@@ -447,6 +474,22 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-use-callback-ref" "1.0.1"
 
+"@radix-ui/react-use-controllable-state@1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-use-controllable-state/-/react-use-controllable-state-1.2.6.tgz#0f109eff004c3c1ff5f9709570f45dee9955513e"
+  integrity sha512-uEQJGT97ZA/TgP/Hydw47lHu+/vQj6z/0jA+WeTbK1o9Rx45GImjpD0tc3W5ad3D6XTSR6e1yEO0FvGq6WQfVQ==
+  dependencies:
+    "@radix-ui/primitive" "1.1.7"
+    "@radix-ui/react-use-effect-event" "0.0.5"
+    "@radix-ui/react-use-layout-effect" "1.1.4"
+
+"@radix-ui/react-use-effect-event@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-use-effect-event/-/react-use-effect-event-0.0.5.tgz#7732a4ae6bc032c7f654e658203df92d3520f8d1"
+  integrity sha512-7cshFL8HGS/7HEiHH+9kL9HBwp2sa9yX18Knwek6KYWmXwM7pegMgta2AXMQKI+rq3JnfSj9x8wYqFMTdG1Jgg==
+  dependencies:
+    "@radix-ui/react-use-layout-effect" "1.1.4"
+
 "@radix-ui/react-use-escape-keydown@1.0.3":
   version "1.0.3"
   resolved "https://registry.npmjs.org/@radix-ui/react-use-escape-keydown/-/react-use-escape-keydown-1.0.3.tgz"
@@ -461,6 +504,11 @@
   integrity sha512-v/5RegiJWYdoCvMnITBkNNx6bCj20fiaJnWtRkU18yITptraXjffz5Qbn05uOiQnOvi+dbkznkoaMltz1GnszQ==
   dependencies:
     "@babel/runtime" "^7.13.10"
+
+"@radix-ui/react-use-layout-effect@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-use-layout-effect/-/react-use-layout-effect-1.1.4.tgz#51a0bbc342315070983383b3f8f00061083782a8"
+  integrity sha512-K20DkRkUwDnxEYMBPcg3Y6voLkEy5p5QQmszZgLngKKiC7dzBR/aEuK3w1qlx2JWDUNH6FluahYdgR3BP+QbYw==
 
 "@radix-ui/react-use-previous@1.0.1":
   version "1.0.1"
@@ -484,6 +532,13 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-use-layout-effect" "1.0.1"
+
+"@radix-ui/react-use-size@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-use-size/-/react-use-size-1.1.4.tgz#2d6d0a97a5cd11a76f4f09984239d9e26c59ce4e"
+  integrity sha512-D3anSY15EJoxrihpsXI6SMrmmonnQtR2ni7arO+Lfdg3O95b9hNXxONk8jA5C8ANdF/h5HMAxejgs8PWJ6rlhw==
+  dependencies:
+    "@radix-ui/react-use-layout-effect" "1.1.4"
 
 "@radix-ui/react-visually-hidden@1.0.3":
   version "1.0.3"
@@ -1473,9 +1528,9 @@ fs.realpath@^1.0.0:
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
 
 fsevents@~2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
-  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
+  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 function-bind@^1.1.1:
   version "1.1.1"
@@ -2036,10 +2091,10 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-lottie-web@^5.10.2:
-  version "5.12.0"
-  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.12.0.tgz#345bab6ae2e77ff9475483e8b4847f353559d2cc"
-  integrity sha512-tt2oiv0EmXC8J/RF877dVCo93vZBBnww+SO6dldREgHD8EsP97jQ42JRryIRfY+6aVESQsHYNEAYgH25cBFy7A==
+lottie-web@^5.12.2:
+  version "5.13.0"
+  resolved "https://registry.npmjs.org/lottie-web/-/lottie-web-5.13.0.tgz"
+  integrity sha512-+gfBXl6sxXMPe8tKQm7qzLnUy5DUPJPKIyRHwtpCpyUEYjHYRJC/5gjUvdkuO2c3JllrPtHXH5UJJK8LRYl5yQ==
 
 lru-cache@^6.0.0:
   version "6.0.0"
